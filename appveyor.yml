@@ -48,6 +48,20 @@ environment:
       CONDA_NPY: 111
       CONDA_PY: 34
 
+    - TARGET_ARCH: x86
+      CONDA_NPY: 110
+      CONDA_PY: 35
+    - TARGET_ARCH: x64
+      CONDA_NPY: 110
+      CONDA_PY: 35
+
+    - TARGET_ARCH: x86
+      CONDA_NPY: 111
+      CONDA_PY: 35
+    - TARGET_ARCH: x64
+      CONDA_NPY: 111
+      CONDA_PY: 35
+
 
 # We always use a 64-bit machine, but can build x86 distributions
 # with the TARGET_ARCH variable.
