@@ -1,7 +1,5 @@
-import click.testing
 import numpy
 import rasterio
-from rasterio.rio.main import main_group
 from rasterio.features import rasterize
 from rasterio.transform import IDENTITY
 
@@ -24,10 +22,3 @@ with rasterio.drivers():
             transform=IDENTITY,
             crs={'init': "EPSG:4326"}) as out:
         out.write_band(1, result.astype(numpy.uint8))
-
-
-# Test CLI
-runner = click.testing.CliRunner()
-result = runner.invoke(main_group, ['--version'])
-assert result.exit_code == 0
-assert rasterio.__version__ in result.output

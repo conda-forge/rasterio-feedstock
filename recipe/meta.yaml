@@ -32,6 +32,8 @@ requirements:
 test:
     imports:
         - rasterio
+    commands:
+        - rio --help
 
 about:
     home: https://github.com/mapbox/rasterio
@@ -41,3 +43,4 @@ about:
 extra:
     recipe-maintainers:
         - ocefpaf
+        - ceholden
