@@ -1,14 +1,16 @@
+{% set version = "0.34.0" %}
+
 package:
     name: rasterio
-    version: 0.32.0
+    version: {{ version }}
 
 source:
-    fn: rasterio-0.32.0.post1.tar.gz
-    url: https://pypi.python.org/packages/source/r/rasterio/rasterio-0.32.0.post1.tar.gz
-    md5: 0cc07d16345ad281ab4e7faf24d40f97
+    fn: rasterio-{{ version }}.tar.gz
+    url: https://pypi.python.org/packages/source/r/rasterio/rasterio-{{ version }}.tar.gz
+    md5: 203c1336e94900b3b98f31cb3f011c18
 
 build:
-    number: 3
+    number: 0
     entry_points:
         - rio = rasterio.rio.main:main_group
 
