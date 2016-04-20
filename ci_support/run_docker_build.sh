@@ -20,7 +20,7 @@ channels:
 conda-build:
  root-dir: /feedstock_root/build_artefacts
 
-show_channel_urls: True
+show_channel_urls: true
 
 CONDARC
 )

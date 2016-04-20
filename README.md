@@ -5,7 +5,7 @@ Home: https://github.com/mapbox/rasterio
 
 Package license: BSD 3-Clause
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: Rasterio reads and writes geospatial raster datasets
 
