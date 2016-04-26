@@ -10,7 +10,7 @@ source:
     md5: 203c1336e94900b3b98f31cb3f011c18
 
 build:
-    number: 0
+    number: 1
     entry_points:
         - rio = rasterio.rio.main:main_group
 
