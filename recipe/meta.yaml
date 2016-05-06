@@ -1,4 +1,4 @@
-{% set version = "0.34.0" %}
+{% set version = "0.35.0.post1" %}
 
 package:
     name: rasterio
@@ -6,11 +6,11 @@ package:
 
 source:
     fn: rasterio-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/r/rasterio/rasterio-{{ version }}.tar.gz
-    md5: 203c1336e94900b3b98f31cb3f011c18
+    url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
+    sha256: c078b1d0950be212607918d67234d4134e392ecf09615525825ec25f6a16989f
 
 build:
-    number: 1
+    number: 0
     entry_points:
         - rio = rasterio.rio.main:main_group
 
@@ -19,8 +19,9 @@ requirements:
         - python
         - numpy x.x
         - cython
-        - gdal 1.11.4
         - setuptools
+        # Rasterio **does** work with gdal, this is just b/c rasterio is usually installed along side fiona.
+        - gdal 1.11.4
     run:
         - python
         - affine
