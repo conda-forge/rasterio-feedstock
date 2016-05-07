@@ -12,6 +12,7 @@ if 'LIBRARY_PREFIX' in os.environ:
 else:
     # Linux/OS X.
     gdalData = os.path.join(os.environ['PREFIX'], 'share', 'gdal')
+os.environ['GDAL_DATA'] = gdalData
 
 rows = cols = 10
 geometry = {'type': 'Polygon',
