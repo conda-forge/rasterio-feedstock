@@ -10,7 +10,7 @@ source:
     sha256: 2e4b94de3cf92f5d81de6d1265b45afd9ac3085b158dcfcaec47c39cfa66029a
 
 build:
-    number: 0
+    number: 1
     entry_points:
         - rio = rasterio.rio.main:main_group
 
@@ -37,6 +37,7 @@ test:
         - rasterio
     commands:
         - rio --help
+        - conda inspect linkages -n _test rasterio  # [linux]
 
 about:
     home: https://github.com/mapbox/rasterio
