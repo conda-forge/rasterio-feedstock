@@ -1,4 +1,4 @@
-{% set version = "0.35.1" %}
+{% set version = "0.36.0" %}
 
 package:
     name: rasterio
@@ -7,10 +7,10 @@ package:
 source:
     fn: rasterio-{{ version }}.tar.gz
     url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-    sha256: 2e4b94de3cf92f5d81de6d1265b45afd9ac3085b158dcfcaec47c39cfa66029a
+    sha256: 292d583dec745792242846081abc8c3a97a606af78f9fa3f655467b5b60a348a
 
 build:
-    number: 1
+    number: 0
     entry_points:
         - rio = rasterio.rio.main:main_group
 
@@ -20,8 +20,7 @@ requirements:
         - numpy x.x
         - cython
         - setuptools
-        # Rasterio **does** work with gdal, this is just b/c rasterio is usually installed along side fiona.
-        - gdal 1.11.4
+        - gdal >=2.*
     run:
         - python
         - affine
@@ -29,7 +28,7 @@ requirements:
         - enum34  # [py27]
         - numpy x.x
         - snuggs
-        - gdal 1.11.4
+        - gdal >=2.*
         - click-plugins
 
 test:
@@ -37,7 +36,6 @@ test:
         - rasterio
     commands:
         - rio --help
-        - conda inspect linkages -n _test rasterio  # [linux]
 
 about:
     home: https://github.com/mapbox/rasterio
