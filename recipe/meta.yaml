@@ -36,6 +36,7 @@ test:
         - rasterio
     commands:
         - rio --help
+        - conda inspect linkages -n _test rasterio  # [linux]
 
 about:
     home: https://github.com/mapbox/rasterio
