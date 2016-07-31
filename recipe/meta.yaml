@@ -10,7 +10,7 @@ source:
     sha256: 292d583dec745792242846081abc8c3a97a606af78f9fa3f655467b5b60a348a
 
 build:
-    number: 1
+    number: 2
     entry_points:
         - rio = rasterio.rio.main:main_group
 
@@ -23,6 +23,7 @@ requirements:
         - gdal 2.1.*
     run:
         - python
+        - setuptools
         - affine
         - cligj
         - enum34  # [py27]
@@ -36,12 +37,12 @@ test:
         - rasterio
     commands:
         - rio --help
-        - conda inspect linkages -n _test rasterio  # [linux]
+        - conda inspect linkages -n _test rasterio  # [not win]
 
 about:
     home: https://github.com/mapbox/rasterio
     license: BSD 3-Clause
-    summary: Rasterio reads and writes geospatial raster datasets
+    summary: 'Rasterio reads and writes geospatial raster datasets.'
 
 extra:
     recipe-maintainers:
