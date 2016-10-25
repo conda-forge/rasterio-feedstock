@@ -1,50 +1,56 @@
-{% set version = "0.36.0" %}
+{% set version = "1.0a2" %}
 
 package:
-    name: rasterio
-    version: {{ version }}
+  name: rasterio
+  version: {{ version }}
 
 source:
-    fn: rasterio-{{ version }}.tar.gz
-    url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-    sha256: 292d583dec745792242846081abc8c3a97a606af78f9fa3f655467b5b60a348a
+  fn: rasterio-{{ version }}.tar.gz
+  url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
+  sha256: 03fc123ef4ede2017b79e8a26c9ba374a10e116e05a359121bbf696307642ca6
 
 build:
-    number: 2
-    entry_points:
-        - rio = rasterio.rio.main:main_group
+  number: 0
+  entry_points:
+    - rio = rasterio.rio.main:main_group
 
 requirements:
-    build:
-        - python
-        - numpy x.x
-        - cython
-        - setuptools
-        - gdal 2.1.*
-    run:
-        - python
-        - setuptools
-        - affine
-        - cligj
-        - enum34  # [py27]
-        - numpy x.x
-        - snuggs
-        - gdal 2.1.*
-        - click-plugins
+  build:
+    - python
+    - numpy x.x
+    - cython
+    - setuptools
+    - gdal 2.1.*
+  run:
+    - python
+    - setuptools
+    - affine >=1.3.0
+    - boto3 >=1.2.4
+    - cligj
+    - enum34  # [py27]
+    - numpy x.x
+    - snuggs >=1.2
+    - gdal 2.1.*
+    - click-plugins
 
 test:
-    imports:
-        - rasterio
-    commands:
-        - rio --help
-        - conda inspect linkages -n _test rasterio  # [not win]
+  imports:
+    - rasterio
+  files:
+    - test_data/test.tif
+  commands:
+    - rio --help
+    - rio info $RECIPE_DIR/test_data/test.tif  # [not win]
+    - rio info %RECIPE_DIR%\test_data\test.tif  # [win]
+    #- conda inspect linkages -p $PREFIX rasterio  # [not win]
+    #- conda inspect objects -p $PREFIX rasterio  # [osx]
 
 about:
-    home: https://github.com/mapbox/rasterio
-    license: BSD 3-Clause
-    summary: 'Rasterio reads and writes geospatial raster datasets.'
+  home: https://github.com/mapbox/rasterio
+  license: BSD 3-Clause
+  summary: 'Rasterio reads and writes geospatial raster datasets.'
 
 extra:
-    recipe-maintainers:
-        - ocefpaf
-        - ceholden
+  recipe-maintainers:
+    - ocefpaf
+    - ceholden
