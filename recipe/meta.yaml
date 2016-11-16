@@ -42,8 +42,8 @@ test:
     - rio --help
     - rio info $RECIPE_DIR/test_data/test.tif  # [not win]
     - rio info %RECIPE_DIR%\test_data\test.tif  # [win]
-    - conda inspect linkages -p $PREFIX rasterio  # [not win]
-    - conda inspect objects -p $PREFIX rasterio  # [osx]
+    #- conda inspect linkages -p $PREFIX rasterio  # [not win]
+    #- conda inspect objects -p $PREFIX rasterio  # [osx]
 
 about:
   home: https://github.com/mapbox/rasterio
