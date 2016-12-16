@@ -11,6 +11,18 @@ Summary: Rasterio reads and writes geospatial raster datasets.
 
 
 
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rasterio-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rasterio-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/rasterio-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rasterio-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rasterio-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rasterio-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rasterio/badges/version.svg)](https://anaconda.org/conda-forge/rasterio)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rasterio/badges/downloads.svg)](https://anaconda.org/conda-forge/rasterio)
+
 Installing rasterio
 ===================
 
@@ -66,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rasterio-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rasterio-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/rasterio-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rasterio-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rasterio-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rasterio-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rasterio/badges/version.svg)](https://anaconda.org/conda-forge/rasterio)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rasterio/badges/downloads.svg)](https://anaconda.org/conda-forge/rasterio)
 
 
 Updating rasterio-feedstock

@@ -8,7 +8,7 @@ osx_image: beta-xcode6.1
 
 env:
   matrix:
-    
+
     - CONDA_NPY=110  CONDA_PY=27
     - CONDA_NPY=111  CONDA_PY=27
     - CONDA_NPY=110  CONDA_PY=34
@@ -39,7 +39,14 @@ install:
       conda install --yes --quiet conda-forge-build-setup
       source run_conda_forge_build_setup
 
+      # install conda-build 2.x to build with a long prefix
+      conda install --yes --quiet conda-build=2
+      conda info
+
 script:
   - conda build ./recipe
 
   - upload_or_check_non_existence ./recipe conda-forge --channel=main
+
+  # inspect the prefix lengths of the built packages
+  - conda inspect prefix-lengths /Users/travis/miniconda3/conda-bld/osx-64/*.tar.bz2
