@@ -1,4 +1,4 @@
-{% set version = "1.0a4" %}
+{% set version = "1.0a5" %}
 
 package:
   name: rasterio
@@ -7,7 +7,7 @@ package:
 source:
   fn: rasterio-{{ version }}.tar.gz
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: f81fb7f8a76b6204f58fc589e478b6fc5247974f9410775e0405bd12bcf9904b
+  sha256: 17b18c4964979c1954439eedcb806b83d1bfd7e2cbe1f459c59680919fa581c2
 
 build:
   number: 0
@@ -42,12 +42,13 @@ test:
     - rio --help
     - rio info $RECIPE_DIR/test_data/test.tif  # [not win]
     - rio info %RECIPE_DIR%\test_data\test.tif  # [win]
-    #- conda inspect linkages -p $PREFIX rasterio  # [not win]
-    #- conda inspect objects -p $PREFIX rasterio  # [osx]
+    - conda inspect linkages -p $PREFIX rasterio  # [not win]
+    - conda inspect objects -p $PREFIX rasterio  # [osx]
 
 about:
   home: https://github.com/mapbox/rasterio
   license: BSD 3-Clause
+  license_file: LICENSE.txt
   summary: 'Rasterio reads and writes geospatial raster datasets.'
 
 extra:
