@@ -4,11 +4,6 @@
 
 environment:
 
-  # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
-  # /E:ON and /V:ON options are not enabled in the batch script intepreter
-  # See: http://stackoverflow.com/a/13751649/163740
-  CMD_IN_ENV: "cmd /E:ON /V:ON /C obvci_appveyor_python_build_env.cmd"
-
   BINSTAR_TOKEN:
     # The BINSTAR_TOKEN secure variable. This is defined canonically in conda-forge.yml.
     secure: MP4hZYylDyUWEsrt3u3cod2sbFeRwUziH02mvQOdbjsTO/l1yIxDkP/76rSIjcGC
@@ -45,14 +40,34 @@ environment:
       CONDA_INSTALL_LOCN: C:\\Miniconda35-x64
 
     - TARGET_ARCH: x86
+      CONDA_NPY: 112
+      CONDA_PY: 35
+      CONDA_INSTALL_LOCN: C:\\Miniconda35
+
+    - TARGET_ARCH: x64
+      CONDA_NPY: 112
+      CONDA_PY: 35
+      CONDA_INSTALL_LOCN: C:\\Miniconda35-x64
+
+    - TARGET_ARCH: x86
       CONDA_NPY: 111
       CONDA_PY: 36
-      CONDA_INSTALL_LOCN: C:\\Miniconda35
+      CONDA_INSTALL_LOCN: C:\\Miniconda36
 
     - TARGET_ARCH: x64
       CONDA_NPY: 111
       CONDA_PY: 36
-      CONDA_INSTALL_LOCN: C:\\Miniconda35-x64
+      CONDA_INSTALL_LOCN: C:\\Miniconda36-x64
+
+    - TARGET_ARCH: x86
+      CONDA_NPY: 112
+      CONDA_PY: 36
+      CONDA_INSTALL_LOCN: C:\\Miniconda36
+
+    - TARGET_ARCH: x64
+      CONDA_NPY: 112
+      CONDA_PY: 36
+      CONDA_INSTALL_LOCN: C:\\Miniconda36-x64
 
 
 # We always use a 64-bit machine, but can build x86 distributions
@@ -63,7 +78,7 @@ platform:
 install:
     # If there is a newer build queued for the same PR, cancel this one.
     - cmd: |
-        curl https://raw.githubusercontent.com/conda-forge/conda-forge-build-setup-feedstock/master/recipe/ff_ci_pr_build.py > ff_ci_pr_build.py
+        powershell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/conda-forge/conda-forge-build-setup-feedstock/master/recipe/ff_ci_pr_build.py', 'ff_ci_pr_build.py')"
         ff_ci_pr_build -v --ci "appveyor" "%APPVEYOR_ACCOUNT_NAME%/%APPVEYOR_PROJECT_SLUG%" "%APPVEYOR_BUILD_NUMBER%" "%APPVEYOR_PULL_REQUEST_NUMBER%"
         del ff_ci_pr_build.py
 
@@ -83,7 +98,6 @@ install:
     - cmd: conda config --add channels conda-forge
 
     # Configure the VM.
-    - cmd: conda install -n root --quiet --yes obvious-ci
     - cmd: conda install -n root --quiet --yes conda-forge-build-setup
     - cmd: run_conda_forge_build_setup
 
@@ -91,6 +105,6 @@ install:
 build: off
 
 test_script:
-    - "%CMD_IN_ENV% conda build recipe --quiet"
+    - conda build recipe --quiet
 deploy_script:
     - cmd: upload_or_check_non_existence .\recipe conda-forge --channel=main
