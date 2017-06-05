@@ -1,4 +1,4 @@
-{% set version = "1.0a8" %}
+{% set version = "1.0a9" %}
 
 package:
   name: rasterio
@@ -7,7 +7,7 @@ package:
 source:
   fn: rasterio-{{ version }}.tar.gz
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 20c1993ecdda39f614a2d59d7d6040291b78876b84bcb870c5e9d89d0394ab75
+  sha256: bbb635576d8d59d364a6dd3eb2413b375be4f140194dc43e2f120a7f0907111c
 
 build:
   number: 0
@@ -20,7 +20,7 @@ requirements:
     - numpy x.x
     - cython
     - setuptools
-    - gdal 2.1.*
+    - gdal 2.2.*
   run:
     - python
     - setuptools
@@ -30,7 +30,7 @@ requirements:
     - enum34  # [py27]
     - numpy x.x
     - snuggs >=1.2
-    - gdal 2.1.*
+    - gdal 2.2.*
     - click-plugins
 
 test:
