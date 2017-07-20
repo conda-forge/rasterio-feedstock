@@ -10,27 +10,31 @@ source:
   sha256: bbb635576d8d59d364a6dd3eb2413b375be4f140194dc43e2f120a7f0907111c
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
 
 requirements:
   build:
     - python
-    - numpy x.x
-    - cython
     - setuptools
-    - gdal 2.2.*
+    - cython
+    - numpy 1.7.*  # [py27]
+    - numpy 1.9.*  # [py35]
+    - numpy 1.11.*  # [py36]
+    - libgdal 2.1.*
   run:
     - python
     - setuptools
+    - numpy >=1.7  # [py27]
+    - numpy >=1.9  # [py35]
+    - numpy >=1.11  # [py36]
     - affine >=1.3.0
     - boto3 >=1.2.4
     - cligj
     - enum34  # [py27]
-    - numpy x.x
     - snuggs >=1.2
-    - gdal 2.2.*
+    - libgdal 2.1.*
     - click-plugins
 
 test:
