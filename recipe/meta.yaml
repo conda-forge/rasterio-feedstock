@@ -1,16 +1,15 @@
-{% set version = "1.0a9" %}
+{% set version = "0.36.0" %}
 
 package:
   name: rasterio
   version: {{ version }}
 
 source:
-  fn: rasterio-{{ version }}.tar.gz
-  url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: bbb635576d8d59d364a6dd3eb2413b375be4f140194dc43e2f120a7f0907111c
+  url: https://pypi.io/packages/source/r/rasterio/rasterio-{{ version }}.tar.gz
+  sha256: 467d9cf8297a6912b33dde49fa519346ba766972344fbafb22f3dfc54225f08a
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -19,14 +18,14 @@ requirements:
     - python
     - setuptools
     - cython
-    - numpy 1.9.*  # [py27 or py35]
-    - numpy 1.11.*  # [py36]
+    - numpy 1.9.*  # [not (win and py36)]
+    - numpy 1.11.*  # [win and py36]
     - libgdal 2.1.*
   run:
     - python
     - setuptools
-    - numpy >=1.9  # [py27 or py35]
-    - numpy >=1.11  # [py36]
+    - numpy >=1.9  # [not (win and py36)]
+    - numpy >=1.11  # [win and py36]
     - affine >=1.3.0
     - attrs
     - boto3 >=1.2.4
