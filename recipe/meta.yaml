@@ -9,7 +9,7 @@ source:
   sha256: 467d9cf8297a6912b33dde49fa519346ba766972344fbafb22f3dfc54225f08a
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -20,7 +20,7 @@ requirements:
     - cython
     - numpy 1.9.*  # [not (win and py36)]
     - numpy 1.11.*  # [win and py36]
-    - libgdal 2.1.*
+    - gdal 2.1.*
   run:
     - python
     - setuptools
@@ -32,7 +32,7 @@ requirements:
     - cligj
     - enum34  # [py27]
     - snuggs >=1.4.1
-    - libgdal 2.1.*
+    - gdal 2.1.*
     - click-plugins
 
 test:
@@ -44,8 +44,8 @@ test:
     - rio --help
     - rio info $RECIPE_DIR/test_data/test.tif  # [not win]
     - rio info %RECIPE_DIR%\test_data\test.tif  # [win]
-    - conda inspect linkages -p $PREFIX rasterio  # [not win]
-    - conda inspect objects -p $PREFIX rasterio  # [osx]
+    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
+    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
 
 about:
   home: https://github.com/mapbox/rasterio
