@@ -1,4 +1,4 @@
-{% set version = "1.0a10" %}
+{% set version = "1.0a11" %}
 
 package:
   name: rasterio
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/rasterio/rasterio-{{ version }}.tar.gz
-  sha256: 33bb76ca13d3fa177ac0ffebad6522c514a38d2b5d55b6db9997c8d1e7ec864a
+  sha256: 94e374dd28e9a9ab04a65282c07ff8da4ca6dfd3da0ac708fba9eeb13bcf1021
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -20,7 +20,7 @@ requirements:
     - cython
     - numpy 1.9.*  # [not (win and py36)]
     - numpy 1.11.*  # [win and py36]
-    - libgdal 2.1.*
+    - gdal 2.2.*
   run:
     - python
     - setuptools
@@ -32,7 +32,7 @@ requirements:
     - cligj
     - enum34  # [py27]
     - snuggs >=1.4.1
-    - libgdal 2.1.*
+    - gdal 2.2.*
     - click-plugins
 
 test:
