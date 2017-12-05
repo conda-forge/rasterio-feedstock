@@ -1,4 +1,4 @@
-{% set version = "1.0a11" %}
+{% set version = "1.0a12" %}
 
 package:
   name: rasterio
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/r/rasterio/rasterio-{{ version }}.tar.gz
-  sha256: 94e374dd28e9a9ab04a65282c07ff8da4ca6dfd3da0ac708fba9eeb13bcf1021
+  sha256: 47d460326e04c64590ff56952271a184a6307f814efc34fb319c12e690585f3c
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
