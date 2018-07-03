@@ -19,7 +19,7 @@ requirements:
     - pip
     - cython
     - numpy 1.11.*
-    - gdal 2.2.*
+    - libgdal 2.2.*
   run:
     - python
     - setuptools
@@ -30,7 +30,7 @@ requirements:
     - cligj
     - enum34  # [py27]
     - snuggs >=1.4.1
-    - gdal 2.2.*
+    - libgdal 2.2.*
     - click-plugins
 
 test:
