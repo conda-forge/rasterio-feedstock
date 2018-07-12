@@ -1,0 +1,16 @@
+c_compiler:
+- toolchain_c
+cxx_compiler:
+- toolchain_cxx
+libgdal:
+- '2.2'
+numpy:
+- '1.9'
+pin_run_as_build:
+  libgdal:
+    max_pin: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- '2.7'
