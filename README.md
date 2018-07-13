@@ -14,14 +14,16 @@ Summary: Rasterio reads and writes geospatial raster datasets.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rasterio-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rasterio-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/rasterio-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rasterio-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rasterio-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rasterio-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/rasterio-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/rasterio-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/rasterio-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/rasterio-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/rasterio-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/rasterio-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rasterio/badges/version.svg)](https://anaconda.org/conda-forge/rasterio)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rasterio/badges/downloads.svg)](https://anaconda.org/conda-forge/rasterio)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rasterio-green.svg)](https://anaconda.org/conda-forge/rasterio) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rasterio.svg)](https://anaconda.org/conda-forge/rasterio) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rasterio.svg)](https://anaconda.org/conda-forge/rasterio) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rasterio.svg)](https://anaconda.org/conda-forge/rasterio) |
 
 Installing rasterio
 ===================

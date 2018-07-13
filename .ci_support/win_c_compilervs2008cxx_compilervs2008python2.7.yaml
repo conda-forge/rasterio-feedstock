@@ -1,0 +1,20 @@
+c_compiler:
+- vs2008
+cxx_compiler:
+- vs2008
+libgdal:
+- '2.2'
+numpy:
+- '1.11'
+pin_run_as_build:
+  libgdal:
+    max_pin: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- '2.7'
+zip_keys:
+- - python
+  - c_compiler
+  - cxx_compiler
