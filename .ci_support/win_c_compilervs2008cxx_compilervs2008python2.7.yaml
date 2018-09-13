@@ -1,11 +1,15 @@
 c_compiler:
 - vs2008
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
 cxx_compiler:
 - vs2008
 libgdal:
 - '2.2'
 numpy:
-- '1.11'
+- '1.14'
 pin_run_as_build:
   libgdal:
     max_pin: x.x
