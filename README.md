@@ -7,7 +7,7 @@ Package license: BSD 3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: Rasterio reads and writes geospatial raster datasets.
+Summary: Rasterio reads and writes geospatial raster datasets
 
 
 
