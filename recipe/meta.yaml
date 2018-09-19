@@ -1,4 +1,4 @@
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 8aa0b6361148a625efde1c3df7c7c87c61909d167e1f9c68c8bbba017b2cba51
+  sha256: c6dca57a509a2a604a3b63c4d2bdfb58de5b464a21d927f70ffc55e554ab0101
 
 build:
   number: 0
@@ -26,33 +26,40 @@ requirements:
   run:
     - python
     - setuptools
-    - {{ pin_compatible('numpy') }}
-    - affine >=1.3.0
-    - attrs
-    - boto3 >=1.2.4
-    - cligj
-    - enum34  # [py27]
-    - snuggs >=1.4.1
     - libgdal
+    - affine
+    - attrs
+    - cligj
+    - {{ pin_compatible('numpy') }}
+    - snuggs >=1.4.1
     - click-plugins
-
+    # Extras.
+    - enum34  # [py27]
+    - boto3 >=1.2.4
 test:
+  source_files:
+    - tests
   imports:
     - rasterio
+  requires:
+    - packaging
+    - hypothesis
+    - pytest >=2.8.2
+    - pytest-cov >=2.2.0
   files:
     - test_data/test.tif
   commands:
     - rio --help
     - rio info $RECIPE_DIR/test_data/test.tif  # [not win]
     - rio info %RECIPE_DIR%\test_data\test.tif  # [win]
-    - conda inspect linkages -p $PREFIX $PKG_NAME  # [not win]
-    - conda inspect objects -p $PREFIX $PKG_NAME  # [osx]
+    # Skipping some tests due to `fixture 'caplog' not found` or `access_key`.
+    - pytest -s -rxs -v -k "not (test_warped_vrt_msk_add_alpha or test_warped_vrt_msk_nodata or test_open_https_vsicurl or test_requester_pays)" tests  # [not win]
 
 about:
   home: https://github.com/mapbox/rasterio
   license: BSD 3-Clause
   license_file: LICENSE.txt
-  summary: 'Rasterio reads and writes geospatial raster datasets.'
+  summary: 'Rasterio reads and writes geospatial raster datasets'
 
 extra:
   recipe-maintainers:
