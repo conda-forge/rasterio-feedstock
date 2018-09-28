@@ -1,4 +1,4 @@
-{% set version = "1.0.6" %}
+{% set version = "1.0.7" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: a02f49d65e2bf61965af3385f6a6fa96ac35a50cb78e7cfa861bb61d39650f24
+  sha256: 2fcfabb5842197bb87dde4a75218327dd87713900c97ee27a1c94e5d0005bb4c
 
 build:
   number: 0
@@ -25,11 +25,12 @@ requirements:
     - libgdal
   run:
     - python
-    - setuptools
+    - setuptools >=0.9.8
     - libgdal
-    - affine
-    - attrs
-    - cligj
+    - affine >=1.3.0
+    - attrs >=16.0.0
+    - click >=4,<8
+    - cligj >=0.5
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
