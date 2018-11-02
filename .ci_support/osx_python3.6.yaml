@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - toolchain_cxx
 libgdal:
-- '2.2'
+- '2.3'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
