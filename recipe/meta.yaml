@@ -1,4 +1,4 @@
-{% set version = "1.0.9" %}
+{% set version = "1.0.10" %}
 
 package:
   name: rasterio
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 8b121d5be39c3eaaa36c8dcc3c44a7c92de8dca078a643fc37a22c46736c0805
+  sha256: 435bc99f68eb90f40b2b0640fc44af46d92094a62b021b3f17fe1d40360a0267
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win and py27]
   entry_points:
     - rio = rasterio.rio.main:main_group
