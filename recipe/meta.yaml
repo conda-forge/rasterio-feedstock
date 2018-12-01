@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - pip = 9.0.3
+    - pip =9.0.3
     - cython
     - numpy
     - libgdal
