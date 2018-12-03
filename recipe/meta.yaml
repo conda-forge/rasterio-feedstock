@@ -1,4 +1,4 @@
-{% set version = "1.0.10" %}
+{% set version = "1.0.11" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 435bc99f68eb90f40b2b0640fc44af46d92094a62b021b3f17fe1d40360a0267
+  sha256: 480a9854b59cd4fcf0e1a43aaee9a433cd7db02fd75a61caade5064028b1593b
 
 build:
   number: 0
@@ -55,7 +55,7 @@ test:
     - rio info $RECIPE_DIR/test_data/test.tif  # [not win]
     - rio info %RECIPE_DIR%\test_data\test.tif  # [win]
     # Skipping some tests due to `fixture 'caplog' not found` or `access_key`.
-    - pytest -s -rxs -v -k "not (test_warped_vrt_msk_add_alpha or test_warped_vrt_msk_nodata or test_open_https_vsicurl or test_requester_pays)" tests  # [not win]
+    - pytest -s -rxs -v -m "not wheel" -k "not (test_warped_vrt_msk_add_alpha or test_warped_vrt_msk_nodata or test_open_https_vsicurl or test_requester_pays or test_ensure_env_decorator_sets_gdal_data_prefix)" tests  # [not win]
 
 about:
   home: https://github.com/mapbox/rasterio
