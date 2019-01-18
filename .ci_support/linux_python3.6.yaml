@@ -1,15 +1,15 @@
 c_compiler:
-- toolchain_c
+- gcc
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- toolchain_cxx
+- gxx
 docker_image:
-- condaforge/linux-anvil
+- condaforge/linux-anvil-comp7
 libgdal:
-- '2.3'
+- '2.4'
 numpy:
 - '1.9'
 pin_run_as_build:

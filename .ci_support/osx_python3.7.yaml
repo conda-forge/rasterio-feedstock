@@ -1,15 +1,15 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 c_compiler:
-- toolchain_c
+- clang
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- toolchain_cxx
+- clangxx
 libgdal:
-- '2.3'
+- '2.4'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
