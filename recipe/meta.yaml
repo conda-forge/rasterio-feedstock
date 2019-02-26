@@ -35,19 +35,20 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
-    # Extras.
-    - enum34  # [py27]
-    - boto3 >=1.2.4
+    - enum34  # [py<34]
 test:
   source_files:
     - tests
   imports:
     - rasterio
   requires:
-    - packaging
-    - hypothesis
     - pytest >=2.8.2
     - pytest-cov >=2.2.0
+    - boto3 >=1.2.4
+    - packaging
+    - hypothesis
+    - mock  # [py2k]
+    - futures  # [py2k]
   files:
     - test_data/test.tif
   commands:
