@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 996def8cf72aa55690eedd248d63971fb298a0c4a3790e1ffb9ef07c93ee30cd
+  sha256: e3cd3232963aa35922565bb04216792c18db33620724e2584081fc39118ace8f
 
 build:
   number: 0
