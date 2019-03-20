@@ -5,59 +5,20 @@
 version: 2
 
 jobs:
-  build_osx_python2.7:
+  build:
     working_directory: ~/test
-    macos:
-      xcode: "9.0"
-    environment:
-      - CONFIG: "osx_python2.7"
+    machine: true
     steps:
-      - checkout
       - run:
-          name: Fast finish outdated PRs and merge PRs
-          command: |
-            ./.circleci/fast_finish_ci_pr_build.sh
-            ./.circleci/checkout_merge_commit.sh
-      - run:
-          # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
-          command: ./.circleci/run_osx_build.sh
-  build_osx_python3.6:
-    working_directory: ~/test
-    macos:
-      xcode: "9.0"
-    environment:
-      - CONFIG: "osx_python3.6"
-    steps:
-      - checkout
-      - run:
-          name: Fast finish outdated PRs and merge PRs
-          command: |
-            ./.circleci/fast_finish_ci_pr_build.sh
-            ./.circleci/checkout_merge_commit.sh
-      - run:
-          # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
-          command: ./.circleci/run_osx_build.sh
-  build_osx_python3.7:
-    working_directory: ~/test
-    macos:
-      xcode: "9.0"
-    environment:
-      - CONFIG: "osx_python3.7"
-    steps:
-      - checkout
-      - run:
-          name: Fast finish outdated PRs and merge PRs
-          command: |
-            ./.circleci/fast_finish_ci_pr_build.sh
-            ./.circleci/checkout_merge_commit.sh
-      - run:
-          # Run, test and (if we have a BINSTAR_TOKEN) upload the distributions.
-          command: ./.circleci/run_osx_build.sh
+          # The Circle-CI build should not be active, but if this is not true for some reason, do a fast finish.
+          command: exit 0
 
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_osx_python2.7
-      - build_osx_python3.6
-      - build_osx_python3.7
+      - build:
+          filters:
+            branches:
+              ignore:
+                - /.*/
