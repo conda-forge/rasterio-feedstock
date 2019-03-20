@@ -16,13 +16,6 @@ Current build status
 
 
 <table><tr>
-    <td>CircleCI</td>
-    <td>
-      <a href="https://circleci.com/gh/conda-forge/rasterio-feedstock">
-        <img alt="OSX" src="https://img.shields.io/circleci/project/github/conda-forge/rasterio-feedstock/master.svg?label=OSX">
-      </a>
-    </td>
-  </tr><tr>
     <td>Appveyor</td>
     <td>
       <a href="https://ci.appveyor.com/project/conda-forge/rasterio-feedstock/branch/master">
