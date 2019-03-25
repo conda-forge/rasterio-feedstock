@@ -1,5 +1,5 @@
 :: There is no `gdal-config` on Windows so we need to hardcode gdal's version.
-set GDAL_VERSION=2.2.3
+set GDAL_VERSION=2.4.1
 
 REM For some reason pip is failing
 REM See https://circleci.com/gh/conda-forge/rasterio-feedstock/474?utm_campaign=vcs-integration-link&utm_medium=referral&utm_source=github-build-link
