@@ -24,6 +24,7 @@ requirements:
     - cython
     - numpy
     - libgdal
+    - proj4 <6
   run:
     - python
     - setuptools >=0.9.8
@@ -36,6 +37,7 @@ requirements:
     - snuggs >=1.4.1
     - click-plugins
     - enum34  # [py<34]
+    - proj4 <6
 test:
   source_files:
     - tests
@@ -49,6 +51,7 @@ test:
     - hypothesis
     - mock  # [py2k]
     - futures  # [py2k]
+    - matplotlib
   files:
     - test_data/test.tif
   commands:
