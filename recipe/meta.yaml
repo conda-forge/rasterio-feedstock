@@ -51,7 +51,7 @@ test:
     - hypothesis
     - mock  # [py2k]
     - futures  # [py2k]
-    - matplotlib
+    - matplotlib  # [not py2k]
   files:
     - test_data/test.tif
   commands:
@@ -63,7 +63,7 @@ test:
 
 about:
   home: https://github.com/mapbox/rasterio
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: 'Rasterio reads and writes geospatial raster datasets'
 
