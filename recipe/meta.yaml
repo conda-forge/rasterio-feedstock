@@ -9,7 +9,7 @@ source:
   sha256: 22c2afc282352afddc1a4fedfcbd1deaf5224ee05d3f1caef859491eb76e9497
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and py27]
   entry_points:
     - rio = rasterio.rio.main:main_group
@@ -24,7 +24,7 @@ requirements:
     - cython
     - numpy
     - libgdal
-    - proj4 <6
+    - proj4
   run:
     - python
     - setuptools >=0.9.8
@@ -37,7 +37,7 @@ requirements:
     - snuggs >=1.4.1
     - click-plugins
     - enum34  # [py<34]
-    - proj4 <6
+    - proj4
 test:
   source_files:
     - tests
