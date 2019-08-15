@@ -12,13 +12,9 @@ cxx_compiler_version:
 - '7'
 docker_image:
 - condaforge/linux-anvil-comp7
-libgdal:
-- '2.4'
 numpy:
 - '1.14'
 pin_run_as_build:
-  libgdal:
-    max_pin: x.x
   python:
     min_pin: x.x
     max_pin: x.x
