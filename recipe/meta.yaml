@@ -57,10 +57,10 @@ test:
     - rio --help
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\test_data\test.tif  # [win]
-    - pytest -s -rxs -v -m "not wheel" tests  # [not win]
+    - pytest -s -rxs -v -m "not wheel" tests  # [linux]
+    - pytest -s -rxs -v -m "not wheel" -k "not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset)" tests  # [osx]
     # Skipping some tests in Windows due to, most of them looks like file lock issues.
     - pytest -s -rxs -v -m "not wheel" -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr)" tests  # [win]
-
 about:
   home: https://github.com/mapbox/rasterio
   license: BSD-3-Clause
