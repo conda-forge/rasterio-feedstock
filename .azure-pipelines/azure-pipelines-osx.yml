@@ -10,23 +10,14 @@ jobs:
   strategy:
     maxParallel: 8
     matrix:
-      osx_libgdal2.4python2.7:
-        CONFIG: osx_libgdal2.4python2.7
+      osx_python2.7:
+        CONFIG: osx_python2.7
         UPLOAD_PACKAGES: True
-      osx_libgdal2.4python3.6:
-        CONFIG: osx_libgdal2.4python3.6
+      osx_python3.6:
+        CONFIG: osx_python3.6
         UPLOAD_PACKAGES: True
-      osx_libgdal2.4python3.7:
-        CONFIG: osx_libgdal2.4python3.7
-        UPLOAD_PACKAGES: True
-      osx_libgdal3.0python2.7:
-        CONFIG: osx_libgdal3.0python2.7
-        UPLOAD_PACKAGES: True
-      osx_libgdal3.0python3.6:
-        CONFIG: osx_libgdal3.0python3.6
-        UPLOAD_PACKAGES: True
-      osx_libgdal3.0python3.7:
-        CONFIG: osx_libgdal3.0python3.7
+      osx_python3.7:
+        CONFIG: osx_python3.7
         UPLOAD_PACKAGES: True
 
   steps:
