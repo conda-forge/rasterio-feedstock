@@ -63,7 +63,7 @@ test:
     # no idea why those two geom test do not pass on macOS
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset)" tests  # [osx]
     # Skipping some tests in Windows due to, most of them looks like file lock issues.
-    - \"%PYTHON%\" -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr)" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr)" tests  # [win]
 about:
   home: https://github.com/mapbox/rasterio
   license: BSD-3-Clause
