@@ -45,7 +45,8 @@ test:
   requires:
     - pytest >=2.8.2
     - pytest-cov >=2.2.0
-    - ipython>=2.0
+    # we can re-add this after the py38 migration is done
+    # - ipython >=2.0
     - boto3 >=1.2.4
     # TclError: no display name and no $DISPLAY environment variable
     - matplotlib-base  # [not (win or py27)]
