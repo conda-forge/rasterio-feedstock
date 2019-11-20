@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
 - '9'
 channel_sources:
@@ -9,9 +9,11 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
 - '9'
+docker_image:
+- condaforge/linux-anvil-comp7
 libgdal:
 - '3.0'
 macos_machine:

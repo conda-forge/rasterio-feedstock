@@ -1,11 +1,17 @@
 c_compiler:
 - vs2015
+c_compiler_version:
+- '7'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2015
+cxx_compiler_version:
+- '7'
+docker_image:
+- condaforge/linux-anvil-comp7
 libgdal:
 - '3.0'
 numpy:
