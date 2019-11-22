@@ -1,0 +1,5 @@
+libgdal:
+  - 2.4
+  - 3.0  # [not win]
+zipped_keys:  # [not win]
+  - libgdal  # [not win]
