@@ -5,5 +5,5 @@ set GDAL_VERSION=2.4.3
                           --global-option=build_ext ^
                           --global-option="-I%LIBRARY_INC%" ^
                           --global-option="-L%LIBRARY_LIB%" ^
-                          --global-option="-lgdal_i"
+                          --global-option="-lgdal_i" -vv
 if errorlevel 1 exit 1
