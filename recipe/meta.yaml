@@ -1,4 +1,4 @@
-{% set version = "1.1.0" %}
+{% set version = "1.1.1" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: e1be3abf1a2b28dee6e509058352503ad030a20519b86252a25a43a364fec858
+  sha256: 4d58007d32bfc09b9c87823eaf9596c99036e3e820d305f20f372fc76cb67056
 
 build:
   number: 0
@@ -45,7 +45,8 @@ test:
   requires:
     - pytest >=2.8.2
     - pytest-cov >=2.2.0
-    - ipython>=2.0
+    # we can re-add this after the py38 migration is done
+    # - ipython >=2.0
     - boto3 >=1.2.4
     # TclError: no display name and no $DISPLAY environment variable
     - matplotlib-base  # [not (win or py27)]
