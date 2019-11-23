@@ -6,6 +6,5 @@ REM                           --global-option=build_ext ^
 REM                           --global-option="-I%LIBRARY_INC%" ^
 REM                           --global-option="-L%LIBRARY_LIB%" ^
 REM                           --global-option="-lgdal_i" -vv
-%PYTHON% setup.py install --single-version-externally-managed --record record.txt ^
-                          -I%LIBRARY_INC% -L%LIBRARY_LIB% -lgdal_i
+%PYTHON%" setup.py build_ext -I"%LIBRARY_INC%" -lgdal_i -L"%LIBRARY_LIB%" install --single-version-externally-managed --record record.txt
 if errorlevel 1 exit 1
