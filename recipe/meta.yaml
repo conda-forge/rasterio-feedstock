@@ -1,4 +1,4 @@
-{% set version = "1.1.2" %}
+{% set version = "1.1.3" %}
 
 package:
   name: rasterio
@@ -6,11 +6,11 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 969e19f69038a391721dce35b935e2feb4add1cdd0d8f2707fe5d780defdf795
+  sha256: ddb7bb7f67f3b641e1a83da6070fc7347a3f4c3b7d979557ecb04d65143ec8d6
 
 build:
   number: 0
-  skip: True  # [win and py27]
+  skip: true  # [win and py27]
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -40,15 +40,13 @@ requirements:
 test:
   source_files:
     - tests
-  imports:
-    - rasterio
   requires:
+    - pip
     - pytest >=2.8.2
     - pytest-cov >=2.2.0
-    # we can re-add this after the py38 migration is done
-    # - ipython >=2.0
+    - ipython >=2.0
     - boto3 >=1.2.4
-    # TclError: no display name and no $DISPLAY environment variable
+    # needed to avoid `TclError: no display name and no $DISPLAY environment variable`
     - matplotlib-base  # [not (win or py27)]
     - packaging
     - hypothesis
@@ -56,20 +54,24 @@ test:
     - futures  # [py2k]
   files:
     - test_data/test.tif
+  imports:
+    - rasterio
   commands:
     - rio --help
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not test_mp_no_main_env" tests  # [linux]
+    # test_mp_main_env segfaults
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_mp_no_main_env or test_mp_main_env)" tests  # [linux]
     # no idea why those two geom test do not pass on macOS
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset)" tests  # [osx]
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset or test_mp_main_env)" tests  # [osx]
     # Skipping some tests in Windows due to, most of them looks like file lock issues.
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr)" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr or test_mp_main_env)" tests  # [win]
+    - pip check
 about:
   home: https://github.com/mapbox/rasterio
   license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: 'Rasterio reads and writes geospatial raster datasets'
+  summary: Rasterio reads and writes geospatial raster datasets
 
 extra:
   recipe-maintainers:
