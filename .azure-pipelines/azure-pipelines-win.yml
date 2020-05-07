@@ -10,28 +10,28 @@ jobs:
   strategy:
     maxParallel: 4
     matrix:
-      win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.6:
-        CONFIG: win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.6
+      win_libgdal2.4python3.6.____cpython:
+        CONFIG: win_libgdal2.4python3.6.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.7:
-        CONFIG: win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.7
+      win_libgdal2.4python3.7.____cpython:
+        CONFIG: win_libgdal2.4python3.7.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.8:
-        CONFIG: win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.8
+      win_libgdal2.4python3.8.____cpython:
+        CONFIG: win_libgdal2.4python3.8.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.6:
-        CONFIG: win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.6
+      win_libgdal3.0python3.6.____cpython:
+        CONFIG: win_libgdal3.0python3.6.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.7:
-        CONFIG: win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.7
+      win_libgdal3.0python3.7.____cpython:
+        CONFIG: win_libgdal3.0python3.7.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
-      win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.8:
-        CONFIG: win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.8
+      win_libgdal3.0python3.8.____cpython:
+        CONFIG: win_libgdal3.0python3.8.____cpython
         CONDA_BLD_PATH: D:\\bld\\
         UPLOAD_PACKAGES: True
   steps:
@@ -76,31 +76,32 @@ jobs:
 
     - task: CondaEnvironment@1
       inputs:
-        packageSpecs: 'python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=2' # Optional
+        packageSpecs: 'python=3.6 conda-build conda conda-forge::conda-forge-ci-setup=3 pip' # Optional
         installOptions: "-c conda-forge"
-        updateConda: false
+        updateConda: true
       displayName: Install conda-build and activate environment
 
     - script: set PYTHONUNBUFFERED=1
+      displayName: Set PYTHONUNBUFFERED
 
     # Configure the VM
-    - script: setup_conda_rc .\ .\recipe .\.ci_support\%CONFIG%.yaml
+    - script: |
+        call activate base
+        setup_conda_rc .\ ".\recipe" .\.ci_support\%CONFIG%.yaml
+      displayName: conda-forge CI setup
 
     # Configure the VM.
     - script: |
         set "CI=azure"
+        call activate base
         run_conda_forge_build_setup
       displayName: conda-forge build setup
     
 
-    - script: |
-        rmdir C:\strawberry /s /q
-      continueOnError: true
-      displayName: remove strawberryperl
-
     # Special cased version setting some more things!
     - script: |
-        conda.exe build recipe -m .ci_support\%CONFIG%.yaml
+        call activate base
+        conda.exe build "recipe" -m .ci_support\%CONFIG%.yaml
       displayName: Build recipe (vs2008)
       env:
         VS90COMNTOOLS: "C:\\Program Files (x86)\\Common Files\\Microsoft\\Visual C++ for Python\\9.0\\VC\\bin"
@@ -108,7 +109,8 @@ jobs:
       condition: contains(variables['CONFIG'], 'vs2008')
 
     - script: |
-        conda.exe build recipe -m .ci_support\%CONFIG%.yaml
+        call activate base
+        conda.exe build "recipe" -m .ci_support\%CONFIG%.yaml
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1
@@ -116,7 +118,8 @@ jobs:
 
     - script: |
         set "GIT_BRANCH=%BUILD_SOURCEBRANCHNAME%"
-        upload_package .\ .\recipe .ci_support\%CONFIG%.yaml
+        call activate base
+        upload_package  .\ ".\recipe" .ci_support\%CONFIG%.yaml
       displayName: Upload package
       env:
         BINSTAR_TOKEN: $(BINSTAR_TOKEN)

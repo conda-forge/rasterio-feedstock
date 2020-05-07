@@ -29,157 +29,129 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_libgdal2.4python2.7</td>
+              <td>linux_libgdal2.4python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal2.4python3.6</td>
+              <td>linux_libgdal2.4python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal2.4python3.7</td>
+              <td>linux_libgdal2.4python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal2.4python3.8</td>
+              <td>linux_libgdal3.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal2.4python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal3.0python2.7</td>
+              <td>linux_libgdal3.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal3.0python3.6</td>
+              <td>linux_libgdal3.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal3.0python3.7</td>
+              <td>osx_libgdal2.4python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_libgdal3.0python3.8</td>
+              <td>osx_libgdal2.4python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=linux&configuration=linux_libgdal3.0python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal2.4python2.7</td>
+              <td>osx_libgdal2.4python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal2.4python3.6</td>
+              <td>osx_libgdal3.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal2.4python3.7</td>
+              <td>osx_libgdal3.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal2.4python3.8</td>
+              <td>osx_libgdal3.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal2.4python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal3.0python2.7</td>
+              <td>win_libgdal2.4python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python2.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_libgdal2.4python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal3.0python3.6</td>
+              <td>win_libgdal2.4python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_libgdal2.4python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal3.0python3.7</td>
+              <td>win_libgdal2.4python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python3.7" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_libgdal2.4python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_libgdal3.0python3.8</td>
+              <td>win_libgdal3.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=osx&configuration=osx_libgdal3.0python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_libgdal3.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.6</td>
+              <td>win_libgdal3.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.6" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_libgdal3.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.7</td>
+              <td>win_libgdal3.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015libgdal2.4python3.8" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.6</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.6" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.7</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.8</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=3496&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_c_compilervs2015cxx_compilervs2015libgdal3.0python3.8" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rasterio-feedstock?branchName=master&jobName=win&configuration=win_libgdal3.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr>

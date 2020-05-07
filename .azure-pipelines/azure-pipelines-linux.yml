@@ -10,36 +10,28 @@ jobs:
   strategy:
     maxParallel: 8
     matrix:
-      linux_libgdal2.4python2.7:
-        CONFIG: linux_libgdal2.4python2.7
+      linux_libgdal2.4python3.6.____cpython:
+        CONFIG: linux_libgdal2.4python3.6.____cpython
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal2.4python3.6:
-        CONFIG: linux_libgdal2.4python3.6
+      linux_libgdal2.4python3.7.____cpython:
+        CONFIG: linux_libgdal2.4python3.7.____cpython
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal2.4python3.7:
-        CONFIG: linux_libgdal2.4python3.7
+      linux_libgdal2.4python3.8.____cpython:
+        CONFIG: linux_libgdal2.4python3.8.____cpython
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal2.4python3.8:
-        CONFIG: linux_libgdal2.4python3.8
+      linux_libgdal3.0python3.6.____cpython:
+        CONFIG: linux_libgdal3.0python3.6.____cpython
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal3.0python2.7:
-        CONFIG: linux_libgdal3.0python2.7
+      linux_libgdal3.0python3.7.____cpython:
+        CONFIG: linux_libgdal3.0python3.7.____cpython
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal3.0python3.6:
-        CONFIG: linux_libgdal3.0python3.6
-        UPLOAD_PACKAGES: True
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal3.0python3.7:
-        CONFIG: linux_libgdal3.0python3.7
-        UPLOAD_PACKAGES: True
-        DOCKER_IMAGE: condaforge/linux-anvil-comp7
-      linux_libgdal3.0python3.8:
-        CONFIG: linux_libgdal3.0python3.8
+      linux_libgdal3.0python3.8.____cpython:
+        CONFIG: linux_libgdal3.0python3.8.____cpython
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-comp7
   steps:
