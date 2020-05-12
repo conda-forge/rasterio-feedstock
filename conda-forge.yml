@@ -6,4 +6,5 @@ appveyor:
     BINSTAR_TOKEN: ipv/06DzgA7pzz2CIAtbPxZSsphDtF+JFyoWRnXkn3O8j7oRe3rzqj3LOoq2DZp4
 channels:
   targets:
-    - [conda-forge, dev]
+  - [conda-forge, dev]
+conda_forge_output_validation: true
