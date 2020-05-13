@@ -7,4 +7,4 @@ appveyor:
 channels:
   targets:
   - [conda-forge, dev]
-conda_forge_output_validation: true
+conda_forge_output_validation: false
