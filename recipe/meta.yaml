@@ -1,4 +1,4 @@
-{% set version = "1.1.3" %}
+{% set version = "1.1.4" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: ddb7bb7f67f3b641e1a83da6070fc7347a3f4c3b7d979557ecb04d65143ec8d6
+  sha256: efc09dee75ce2c70a1eb59a0253794b9d44252065c83272e59319235eb4c415c
 
 build:
   number: 0
@@ -65,7 +65,7 @@ test:
     # no idea why those two geom test do not pass on macOS
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset or test_mp_main_env)" tests  # [osx]
     # Skipping some tests in Windows due to, most of them looks like file lock issues.
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr or test_mp_main_env)" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr or test_mp_main_env or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context)" tests  # [win]
     - pip check
 about:
   home: https://github.com/mapbox/rasterio

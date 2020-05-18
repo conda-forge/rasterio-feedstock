@@ -1,11 +1,11 @@
 c_compiler:
-- vs2015
+- vs2017
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2015
+- vs2017
 libgdal:
 - '2.4'
 numpy:
@@ -17,8 +17,4 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- '3.8'
-zip_keys:
-- - python
-  - c_compiler
-  - cxx_compiler
+- 3.8.* *_cpython
