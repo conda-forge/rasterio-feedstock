@@ -48,8 +48,9 @@ set -e
 echo -e "\n\nMaking the build clobber file and running the build."
 make_build_number ./ ./recipe ./.ci_support/${CONFIG}.yaml
 conda build ./recipe -m ./.ci_support/${CONFIG}.yaml --clobber-file ./.ci_support/clobber_${CONFIG}.yaml
+validate_recipe_outputs "rasterio-feedstock"
 
 if [[ "${UPLOAD_PACKAGES}" != "False" ]]; then
   echo -e "\n\nUploading the packages."
-  upload_package  ./ ./recipe ./.ci_support/${CONFIG}.yaml
+  upload_package --validate --feedstock-name="rasterio-feedstock" ./ ./recipe ./.ci_support/${CONFIG}.yaml
 fi
