@@ -8,23 +8,14 @@ jobs:
     vmImage: vs2017-win2016
   strategy:
     matrix:
-      win_libgdal2.4python3.6.____cpython:
-        CONFIG: win_libgdal2.4python3.6.____cpython
+      win_python3.6.____cpython:
+        CONFIG: win_python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_libgdal2.4python3.7.____cpython:
-        CONFIG: win_libgdal2.4python3.7.____cpython
+      win_python3.7.____cpython:
+        CONFIG: win_python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_libgdal2.4python3.8.____cpython:
-        CONFIG: win_libgdal2.4python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_libgdal3.0python3.6.____cpython:
-        CONFIG: win_libgdal3.0python3.6.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_libgdal3.0python3.7.____cpython:
-        CONFIG: win_libgdal3.0python3.7.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_libgdal3.0python3.8.____cpython:
-        CONFIG: win_libgdal3.0python3.8.____cpython
+      win_python3.8.____cpython:
+        CONFIG: win_python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
     maxParallel: 4
   timeoutInMinutes: 360
@@ -108,14 +99,16 @@ jobs:
         PYTHONUNBUFFERED: 1
       condition: not(contains(variables['CONFIG'], 'vs2008'))
     - script: |
+        set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
         call activate base
-        validate_recipe_outputs "rasterio-feedstock"
+        validate_recipe_outputs "%FEEDSTOCK_NAME%"
       displayName: Validate Recipe Outputs
 
     - script: |
         set "GIT_BRANCH=%BUILD_SOURCEBRANCHNAME%"
+        set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
         call activate base
-        upload_package --validate --feedstock-name="rasterio-feedstock" .\ ".\recipe" .ci_support\%CONFIG%.yaml
+        upload_package --validate --feedstock-name="%FEEDSTOCK_NAME%" .\ ".\recipe" .ci_support\%CONFIG%.yaml
       displayName: Upload package
       env:
         BINSTAR_TOKEN: $(BINSTAR_TOKEN)
