@@ -10,7 +10,6 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and py27]
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -35,7 +34,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
-    - enum34  # [py<34]
 
 test:
   source_files:
@@ -46,12 +44,9 @@ test:
     - pytest-cov >=2.2.0
     - ipython >=2.0
     - boto3 >=1.2.4
-    # needed to avoid `TclError: no display name and no $DISPLAY environment variable`
-    - matplotlib-base  # [not (win or py27)]
+    - matplotlib-base
     - packaging
     - hypothesis
-    - mock  # [py2k]
-    - futures  # [py2k]
   files:
     - test_data/test.tif
   imports:
