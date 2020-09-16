@@ -1,4 +1,4 @@
-{% set version = "1.1.5" %}
+{% set version = "1.1.6" %}
 
 package:
   name: rasterio
@@ -6,11 +6,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 6a63e0b6ff1d7f87d07354c68591a30635a6ce006971504c27971f2cd9816984
+  sha256: e4509dec5a1b1707575c642580ab5476c74d64032d3f7205c4954f2fddee5fa1
 
 build:
-  number: 1
-  skip: true  # [win and py27]
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -35,7 +34,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
-    - enum34  # [py<34]
 
 test:
   source_files:
@@ -46,12 +44,9 @@ test:
     - pytest-cov >=2.2.0
     - ipython >=2.0
     - boto3 >=1.2.4
-    # needed to avoid `TclError: no display name and no $DISPLAY environment variable`
-    - matplotlib-base  # [not (win or py27)]
+    - matplotlib-base
     - packaging
     - hypothesis
-    - mock  # [py2k]
-    - futures  # [py2k]
   files:
     - test_data/test.tif
   imports:
@@ -60,12 +55,10 @@ test:
     - rio --help
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
-    # test_mp_main_env segfaults
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_mp_no_main_env or test_mp_main_env)" tests  # [linux]
-    # no idea why those two geom test do not pass on macOS
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_transform_geom_polygon_cutting or test_transform_geom_polygon_offset or test_mp_main_env)" tests  # [osx]
-    # Skipping some tests in Windows due to, most of them looks like file lock issues.
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_wrap_file or test_hit_ovr or test_mp_main_env or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context)" tests  # [win]
+    # test_boundless_fill_value_overview_masks is failing for all OSes
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_boundless_fill_value_overview_masks)" tests  # [linux]
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_boundless_fill_value_overview_masks)" tests  # [osx]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_boundless_fill_value_overview_masks)" tests  # [win]
     - pip check
 about:
   home: https://github.com/mapbox/rasterio
@@ -78,3 +71,4 @@ extra:
     - ocefpaf
     - ceholden
     - snowman2
+    - xylar

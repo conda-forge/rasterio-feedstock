@@ -1,5 +1,0 @@
-libgdal:
-  - 2.4
-  - 3.0
-zipped_keys:
-  - libgdal
