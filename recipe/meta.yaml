@@ -7,9 +7,11 @@ package:
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
   sha256: e4509dec5a1b1707575c642580ab5476c74d64032d3f7205c4954f2fddee5fa1
+  patches:
+    - 0001-xfail-tests-of-boundless-reads-with-fill_value.patch
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -56,9 +58,8 @@ test:
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
     # test_boundless_fill_value_overview_masks is failing for all OSes
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_boundless_fill_value_overview_masks)" tests  # [linux]
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_boundless_fill_value_overview_masks)" tests  # [osx]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_boundless_fill_value_overview_masks)" tests  # [win]
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs  tests  # [not win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context)" tests  # [win]
     - pip check
 about:
   home: https://github.com/mapbox/rasterio
