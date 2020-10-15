@@ -9,7 +9,7 @@ source:
   sha256: e7f4b395df698dd2e0a285fd8d55accff64f9ff256d6d97162a4ff3ee6afbaaf
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
 
