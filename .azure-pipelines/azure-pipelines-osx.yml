@@ -8,16 +8,18 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_python3.6.____cpython:
-        CONFIG: osx_64_python3.6.____cpython
+      osx_64_numpy1.16python3.6.____cpython:
+        CONFIG: osx_64_numpy1.16python3.6.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.7.____cpython:
-        CONFIG: osx_64_python3.7.____cpython
+      osx_64_numpy1.16python3.7.____cpython:
+        CONFIG: osx_64_numpy1.16python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_python3.8.____cpython:
-        CONFIG: osx_64_python3.8.____cpython
+      osx_64_numpy1.16python3.8.____cpython:
+        CONFIG: osx_64_numpy1.16python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 8
+      osx_64_numpy1.19python3.9.____cpython:
+        CONFIG: osx_64_numpy1.19python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:
