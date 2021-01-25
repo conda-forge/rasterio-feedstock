@@ -47,6 +47,7 @@ test:
     - matplotlib-base
     - packaging
     - hypothesis
+    - shapely
   files:
     - test_data/test.tif
   imports:
