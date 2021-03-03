@@ -1,4 +1,4 @@
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 7c28542869ecce11a1f89d11b63eb48e4f56dd43800897a01519f4728e286067
+  sha256: 3d459c97ef97c105fa1bf4b1729bfaed9fb4a55cd32bf4a7b20af977a643437c
 
 build:
   number: 0
