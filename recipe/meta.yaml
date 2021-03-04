@@ -23,6 +23,8 @@ requirements:
     - cython
     - numpy
     - libgdal
+    # not an explicit dependency but tests clearly depend on proj version
+    - proj
   run:
     - python
     - setuptools >=0.9.8
@@ -34,6 +36,9 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
+    # not an explicit dependency but tests clearly depend on proj version
+    # test_target_aligned_pixels fails for proj 8.0.0
+    - proj
 
 test:
   source_files:
