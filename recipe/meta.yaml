@@ -12,6 +12,7 @@ build:
   number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
+  skip: True  # [win and py<=36]
 
 requirements:
   build:
