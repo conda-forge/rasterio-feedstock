@@ -8,14 +8,23 @@ jobs:
     vmImage: vs2017-win2016
   strategy:
     matrix:
-      win_64_numpy1.17python3.7.____cpython:
-        CONFIG: win_64_numpy1.17python3.7.____cpython
+      win_64_numpy1.17proj7.2.0python3.7.____cpython:
+        CONFIG: win_64_numpy1.17proj7.2.0python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_numpy1.17python3.8.____cpython:
-        CONFIG: win_64_numpy1.17python3.8.____cpython
+      win_64_numpy1.17proj7.2.0python3.8.____cpython:
+        CONFIG: win_64_numpy1.17proj7.2.0python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_numpy1.19python3.9.____cpython:
-        CONFIG: win_64_numpy1.19python3.9.____cpython
+      win_64_numpy1.17proj8.0.1python3.7.____cpython:
+        CONFIG: win_64_numpy1.17proj8.0.1python3.7.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.17proj8.0.1python3.8.____cpython:
+        CONFIG: win_64_numpy1.17proj8.0.1python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.19proj7.2.0python3.9.____cpython:
+        CONFIG: win_64_numpy1.19proj7.2.0python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_numpy1.19proj8.0.1python3.9.____cpython:
+        CONFIG: win_64_numpy1.19proj8.0.1python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
