@@ -9,7 +9,7 @@ source:
   sha256: c66d13844ed5d1f157829e90c1d4b3fd92d4292beaa6cfc3b610d541e0ddb881
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
   skip: true  # [win and py<=36]
