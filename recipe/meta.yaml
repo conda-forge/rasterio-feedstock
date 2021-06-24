@@ -64,7 +64,7 @@ test:
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
     # test_target_aligned_pixels is failing for all OSes for proj 8.0.0
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not test_target_aligned_pixels" tests  # [not win]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_target_aligned_pixels)" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_target_aligned_pixels or test_decimated_no_use_overview)" tests  # [win]
     - pip check
 about:
   home: https://github.com/mapbox/rasterio
