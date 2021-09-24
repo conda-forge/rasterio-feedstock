@@ -36,7 +36,7 @@ requirements:
     - libgdal
     - affine
     - attrs
-    - click >=4,<8
+    - click >=4
     - cligj >=0.5
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
