@@ -9,7 +9,7 @@ source:
   sha256: c5077f97023060d4f1c286b81569942a74597a9301be1a84387d30dd6b14caf6
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
   skip: true  # [win and py<=36]
@@ -36,7 +36,7 @@ requirements:
     - libgdal
     - affine
     - attrs
-    - click >=4,<8
+    - click >=4
     - cligj >=0.5
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
