@@ -9,7 +9,7 @@ source:
   sha256: 589729d70a742b8c157be299884810ecd930607eb9a6c4e56715cd5cfa1af376
 
 build:
-  number: 1
+  number: 2
   entry_points:
     - rio = rasterio.rio.main:main_group
   skip: true  # [win and py<=36]
@@ -28,7 +28,6 @@ requirements:
     - cython
     - numpy
     - libgdal
-    # not an explicit dependency but tests clearly depend on proj version
     - proj
   run:
     - python
@@ -36,13 +35,12 @@ requirements:
     - libgdal
     - affine
     - attrs
+    - certifi
     - click >=4
     - cligj >=0.5
     - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
-    # not an explicit dependency but tests clearly depend on proj version
-    # test_target_aligned_pixels fails for proj 8.0.0
     - proj
 
 test:
