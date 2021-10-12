@@ -1,4 +1,4 @@
-{% set version = "1.2.9" %}
+{% set version = "1.2.10" %}
 
 package:
   name: rasterio
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 589729d70a742b8c157be299884810ecd930607eb9a6c4e56715cd5cfa1af376
+  sha256: f9df8548e8a053d5db6057a4fd28d940d98a06d249f8af9e8fde1d8e9587d0b5
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
   skip: true  # [win and py<=36]
@@ -65,8 +65,9 @@ test:
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
     # test_target_aligned_pixels is failing for all OSes for proj 8.0.0
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not test_target_aligned_pixels" tests  # [not win]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_target_aligned_pixels or test_decimated_no_use_overview)" tests  # [win]
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not test_target_aligned_pixels" tests  # [linux]
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_target_aligned_pixels or test_reproject_error_propagation or test_outer_boundless_pixel_fidelity)" tests  # [osx]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_target_aligned_pixels or test_decimated_no_use_overview or test_reproject_error_propagation)" tests  # [win]
     - pip check
 about:
   home: https://github.com/mapbox/rasterio
