@@ -10,6 +10,8 @@ libgdal:
 - '3.3'
 numpy:
 - '1.18'
+openssl:
+- 1.1.1
 pin_run_as_build:
   libgdal:
     max_pin: x.x
