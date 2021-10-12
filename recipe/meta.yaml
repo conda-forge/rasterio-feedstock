@@ -29,6 +29,8 @@ requirements:
     - numpy
     - libgdal
     - proj
+    # temporary dependency because of potential incompatibility with openssl >=3
+    - openssl
   run:
     - python
     - setuptools >=0.9.8
@@ -42,6 +44,8 @@ requirements:
     - snuggs >=1.4.1
     - click-plugins
     - proj
+    # temporary dependency because of potential incompatibility with openssl >=3
+    - openssl
 
 test:
   source_files:
