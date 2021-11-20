@@ -22,6 +22,11 @@ matrix:
       arch: ppc64le
       dist: focal
 
+    - env: CONFIG=linux_ppc64le_numpy1.21python3.10.____cpython UPLOAD_PACKAGES=True PLATFORM=linux-ppc64le DOCKER_IMAGE=quay.io/condaforge/linux-anvil-ppc64le
+      os: linux
+      arch: ppc64le
+      dist: focal
+
 script:
   - export CI=travis
   - export GIT_BRANCH="$TRAVIS_BRANCH"
