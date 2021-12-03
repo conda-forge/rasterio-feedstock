@@ -1,0 +1,27 @@
+c_compiler:
+- vs2017
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge h5py_dev
+cxx_compiler:
+- vs2017
+libgdal:
+- '3.4'
+numpy:
+- '1.18'
+pin_run_as_build:
+  libgdal:
+    max_pin: x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+proj:
+- 8.2.0
+python:
+- 3.7.* *_cpython
+target_platform:
+- win-64
+zip_keys:
+- - python
+  - numpy
