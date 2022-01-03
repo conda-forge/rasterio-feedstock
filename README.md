@@ -13,7 +13,14 @@ Current build status
 ====================
 
 
-<table>
+<table><tr>
+    <td>Travis</td>
+    <td>
+      <a href="https://travis-ci.com/conda-forge/rasterio-feedstock">
+        <img alt="macOS" src="https://img.shields.io/travis/com/conda-forge/rasterio-feedstock/master.svg?label=macOS">
+      </a>
+    </td>
+  </tr>
     
   <tr>
     <td>Azure</td>
