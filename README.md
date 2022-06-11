@@ -1,7 +1,7 @@
 About rasterio
 ==============
 
-Home: https://github.com/mapbox/rasterio
+Home: https://github.com/rasterio/rasterio
 
 Package license: BSD-3-Clause
 
