@@ -71,7 +71,7 @@ test:
     - python -m pytest -v -m "not wheel" -rxXs -k "not (test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_target_aligned_pixels or test_decimated_no_use_overview or test_reproject_error_propagation)" tests  # [win]
     - pip check
 about:
-  home: https://github.com/mapbox/rasterio
+  home: https://github.com/rasterio/rasterio
   license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: Rasterio reads and writes geospatial raster datasets
