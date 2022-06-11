@@ -11,15 +11,19 @@ jobs:
       win_64_numpy1.19python3.7.____cpython:
         CONFIG: win_64_numpy1.19python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: win_64_numpy1.19python3.7.____cpython
       win_64_numpy1.19python3.8.____cpython:
         CONFIG: win_64_numpy1.19python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: win_64_numpy1.19python3.8.____cpython
       win_64_numpy1.19python3.9.____cpython:
         CONFIG: win_64_numpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: win_64_numpy1.19python3.9.____cpython
       win_64_numpy1.21python3.10.____cpython:
         CONFIG: win_64_numpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: win_64_numpy1.21python3.10.____cpython
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
@@ -70,6 +74,33 @@ jobs:
       displayName: Build recipe
       env:
         PYTHONUNBUFFERED: 1
+    - script: |
+        set CI=azure
+        set CI_RUN_ID=$(build.BuildNumber).$(system.JobAttempt)
+        set FEEDSTOCK_NAME=$(build.Repository.Name)
+        set ARTIFACT_STAGING_DIR=$(Build.ArtifactStagingDirectory)
+        set CONDA_BLD_DIR=$(CONDA_BLD_PATH)
+        set BLD_ARTIFACT_PREFIX=conda_artifacts
+        if "%AGENT_JOBSTATUS%" == "Failed" (
+            set ENV_ARTIFACT_PREFIX=conda_envs
+        )
+        call ".scripts\create_conda_build_artifacts.bat"
+      displayName: Prepare conda build artifacts
+      condition: succeededOrFailed()
+
+    - task: PublishPipelineArtifact@1
+      displayName: Store conda build artifacts
+      condition: not(eq(variables.BLD_ARTIFACT_PATH, ''))
+      inputs:
+        targetPath: $(BLD_ARTIFACT_PATH)
+        artifactName: $(BLD_ARTIFACT_NAME)
+
+    - task: PublishPipelineArtifact@1
+      displayName: Store conda build environment artifacts
+      condition: not(eq(variables.ENV_ARTIFACT_PATH, ''))
+      inputs:
+        targetPath: $(ENV_ARTIFACT_PATH)
+        artifactName: $(ENV_ARTIFACT_NAME)
     - script: |
         set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
         call activate base
