@@ -1,4 +1,4 @@
-{% set version = "1.2.10" %}
+{% set version = "1.3.0" %}
 
 package:
   name: rasterio
@@ -6,10 +6,11 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: f9df8548e8a053d5db6057a4fd28d940d98a06d249f8af9e8fde1d8e9587d0b5
+  sha256: 5a9bdf801252d94e792f8eec90b2f3e5d499c8b4526754c30e03e23a292a71e3
 
 build:
-  number: 7
+  skip: True  # [py<38]
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -63,17 +64,12 @@ test:
     - rio --help
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
-    # test_target_aligned_pixels is failing for all OSes for proj 8.0.0
     # skip linux tests for cross-compiled targets
-    # # # 
-    # ngam: 20220611 skip test_search_debian_gdal_data, test_info_azure_unsigned, test_search_gdal_data_debian
-    # to enable gdal35 (unsure if failures are important...)
-    # gdal_data tests seem related to gdal versions (3.5 vs 3.4)
-    # azure test requires gdal 3.2 to work
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_search_debian_gdal_data or test_info_azure_unsigned or test_target_aligned_pixels)" tests  # [linux and build_platform == target_platform]
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_search_debian_gdal_data or test_info_azure_unsigned or test_target_aligned_pixels or test_outer_boundless_pixel_fidelity)" tests  # [linux and build_platform == target_platform]
-    - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_search_debian_gdal_data or test_info_azure_unsigned or test_target_aligned_pixels or test_reproject_error_propagation or test_outer_boundless_pixel_fidelity)" tests  # [osx]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_search_debian_gdal_data or test_info_azure_unsigned or test_hit_ovr or test_file_in_handler_with_vfs or test_files or test_parse_windows_path or test_copyfiles_same_dataset_another_name or test_context or test_target_aligned_pixels or test_decimated_no_use_overview or test_reproject_error_propagation)" tests  # [win]
+    # xylar 2022-Jul-6: disabling test_search_gdal_data_debian and test_decimated_no_use_overview under win.  
+    #                   test_decimated_no_use_overview fails because of trying to overwrite an existing file.
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs tests  # [linux and build_platform == target_platform]
+    - $PYTHON -m pytest -v -m "not wheel" -rxXs tests  # [osx]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview)" tests  # [win]
     - pip check
 about:
   home: https://github.com/rasterio/rasterio
