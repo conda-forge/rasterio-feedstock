@@ -65,10 +65,11 @@ test:
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
     # skip linux tests for cross-compiled targets
-    # xylar 2022-Jul-6: disabling test_search_gdal_data_debian under win.  All other tests pass!!!
+    # xylar 2022-Jul-6: disabling test_search_gdal_data_debian and test_decimated_no_use_overview under win.  
+    #                   test_decimated_no_use_overview fails because of trying to overwrite an existing file.
     - $PYTHON -m pytest -v -m "not wheel" -rxXs tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs tests  # [osx]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian)" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview)" tests  # [win]
     - pip check
 about:
   home: https://github.com/rasterio/rasterio
