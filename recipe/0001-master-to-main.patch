@@ -1,0 +1,36 @@
+From 12d815d7e72d8300de1313de5ae0aacd88d51fb6 Mon Sep 17 00:00:00 2001
+From: Sean Gillies <sean.gillies@gmail.com>
+Date: Sat, 9 Jul 2022 12:25:49 -0600
+Subject: [PATCH] master -> main in tests
+
+---
+ tests/test_io.py             | 2 +-
+ tests/test_read_boundless.py | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/tests/test_io.py b/tests/test_io.py
+index c07fa78dc..c56c989ea 100644
+--- a/tests/test_io.py
++++ b/tests/test_io.py
+@@ -6,7 +6,7 @@
+ 
+ 
+ httpstif = (
+-    "https://github.com/rasterio/rasterio/blob/master/tests/data/float32.tif?raw=true"
++    "https://github.com/rasterio/rasterio/blob/main/tests/data/float32.tif?raw=true"
+ )
+ 
+ 
+diff --git a/tests/test_read_boundless.py b/tests/test_read_boundless.py
+index 1df4549ba..10b95535f 100644
+--- a/tests/test_read_boundless.py
++++ b/tests/test_read_boundless.py
+@@ -157,7 +157,7 @@ def test_issue1982(capfd):
+     # 2.4.4 that also fixes the issue.  This test will XPASS in the
+     # rasterio-wheels tests.
+     with rasterio.Env(CPL_CURL_VERBOSE=True), rasterio.open(
+-        "https://raw.githubusercontent.com/mapbox/rasterio/master/tests/data/green.tif"
++        "https://raw.githubusercontent.com/mapbox/rasterio/main/tests/data/green.tif"
+     ) as src:
+         image = src.read(
+             indexes=[1, 2, 3],
