@@ -7,8 +7,6 @@ package:
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
   sha256: b5e5235664b1c5c51656d8baca45ca656f7a1dc6e533695db3cfa4d25eea719a
-  patches:
-    - 0001-master-to-main.patch
 
 build:
   skip: true  # [py<38]
