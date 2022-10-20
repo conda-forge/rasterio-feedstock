@@ -1,4 +1,4 @@
-{% set version = "1.3.2" %}
+{% set version = "1.3.3" %}
 
 package:
   name: rasterio
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 0138c3ee2e519b754ad34695c5882f840968f228de7d60577f1d9d92f341c03b
+  sha256: 8edaa1520abc31b31d4869d4c78b27b0a83c9096d476137fe7955a4708cbbef4
 
 build:
   skip: true  # [py<38]
@@ -69,7 +69,7 @@ test:
     #                   test_decimated_no_use_overview fails because of trying to overwrite an existing file.
     - $PYTHON -m pytest -v -m "not wheel" -rxXs tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs tests  # [osx]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview)" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name)" tests  # [win]
     - pip check
 about:
   home: https://github.com/rasterio/rasterio
