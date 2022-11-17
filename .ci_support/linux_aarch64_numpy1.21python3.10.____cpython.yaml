@@ -19,7 +19,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 libgdal:
-- '3.5'
+- '3.6'
 numpy:
 - '1.21'
 pin_run_as_build:
