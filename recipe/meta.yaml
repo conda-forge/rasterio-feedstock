@@ -27,12 +27,12 @@ requirements:
     - pip
     - cython
     - numpy
-    - libgdal <=3.6.0
+    - libgdal >=3.6.0,<3.6.1
     - proj
   run:
     - python
     - setuptools >=0.9.8
-    - libgdal <=3.6.0
+    - libgdal >=3.6.0,<3.6.1
     - affine
     - attrs
     - certifi
