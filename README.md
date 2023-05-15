@@ -327,5 +327,6 @@ Feedstock Maintainers
 * [@ceholden](https://github.com/ceholden/)
 * [@ocefpaf](https://github.com/ocefpaf/)
 * [@snowman2](https://github.com/snowman2/)
+* [@weiji14](https://github.com/weiji14/)
 * [@xylar](https://github.com/xylar/)
 
