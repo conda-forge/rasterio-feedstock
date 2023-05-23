@@ -13,7 +13,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '15'
 libgdal:
-- '3.6'
+- '3.7'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 numpy:
