@@ -73,9 +73,6 @@ test:
     {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata" %}
     {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata_nan" %}
     {% set tests_to_skip = tests_to_skip + " or test_reproject_dst_nodata_default" %}
-    # weiji14 2023-May-2: disable test_transform_bounds_densify that fails on PROJ9.2.0
-    # Remove after rasterio 1.3.7 or above, see https://github.com/rasterio/rasterio/issues/2789
-    {% set tests_to_skip = tests_to_skip + " or test_transform_bounds_densify" %}
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
     - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
