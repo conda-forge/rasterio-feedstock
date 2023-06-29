@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.3.7" %}
+{% set version = "1.3.8" %}
 
 package:
   name: rasterio
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: ce9e7638883e652cf7abac8800af0e5c9ce20e051f1278a8c624c6b56fa64eea
+  sha256: 9ca73020e595ffb3ee481bea5e0f584f0e65ab80e971c945ea5481782c66654e
 
 build:
   skip: true  # [py<38]
-  number: 2
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -73,9 +73,6 @@ test:
     {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata" %}
     {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata_nan" %}
     {% set tests_to_skip = tests_to_skip + " or test_reproject_dst_nodata_default" %}
-    # weiji14 2023-May-2: disable test_transform_bounds_densify that fails on PROJ9.2.0
-    # Remove after rasterio 1.3.7 or above, see https://github.com/rasterio/rasterio/issues/2789
-    {% set tests_to_skip = tests_to_skip + " or test_transform_bounds_densify" %}
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
     - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
