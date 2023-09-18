@@ -1,5 +1,5 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '11.0'
+- '10.9'
 c_compiler:
 - clang
 c_compiler_version:
@@ -15,19 +15,19 @@ cxx_compiler_version:
 libgdal:
 - '3.7'
 macos_machine:
-- arm64-apple-darwin20.0.0
+- x86_64-apple-darwin13.4.0
 numpy:
-- '1.21'
+- '1.22'
 pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
 proj:
-- 9.2.1
+- 9.3.0
 python:
-- 3.8.* *_cpython
+- 3.9.* *_cpython
 target_platform:
-- osx-arm64
+- osx-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
