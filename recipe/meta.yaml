@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<38]
-  number: 2
+  number: 3
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -74,7 +74,6 @@ test:
     {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata" %}
     {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata_nan" %}
     {% set tests_to_skip = tests_to_skip + " or test_reproject_dst_nodata_default" %}
-    {% set tests_to_skip = tests_to_skip + " or test_read_compdcs" %}
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
     - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
