@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.3.8" %}
+{% set version = "1.3.8.post2" %}
 
 package:
   name: rasterio
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 9ca73020e595ffb3ee481bea5e0f584f0e65ab80e971c945ea5481782c66654e
+  sha256: 5fba389da802be9d456be0694073144be60a2cf51b4bc99768acf8b31df3ee44
   patches:
     # removeme once 1.4.0 is released
     - 001_gh2875_remove_matches.patch
 
 build:
   skip: true  # [py<38]
-  number: 4
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
