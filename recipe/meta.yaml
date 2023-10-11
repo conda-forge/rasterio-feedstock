@@ -14,7 +14,7 @@ source:
 
 build:
   skip: true  # [py<38]
-  number: 3
+  number: 4
   entry_points:
     - rio = rasterio.rio.main:main_group
 
