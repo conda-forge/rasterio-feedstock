@@ -8,9 +8,6 @@ package:
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
   sha256: 1240ef585e9e734b8a43850634ed95a0223f1ad4b8639a45a303aa107446c2e2
-  patches:
-    # removeme once 1.4.0 is released
-    - 001_gh2875_remove_matches.patch
 
 build:
   skip: true  # [py<38]
