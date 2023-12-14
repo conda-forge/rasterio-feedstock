@@ -65,20 +65,13 @@ test:
     - rio --help
     - rio info {{ RECIPE_DIR }}/test_data/test.tif  # [not win]
     - rio info {{ RECIPE_DIR }}\\test_data\\test.tif  # [win]
-    # skip linux tests for cross-compiled targets
-    # xylar 2022-Jul-6: disabling test_search_gdal_data_debian and test_decimated_no_use_overview under win.
-    #                   test_decimated_no_use_overview fails because of trying to overwrite an existing file.
-    # akrherz 2023-Feb-26: tests that fail on GDAL 3.6.2, but work on 3.6.0, shrug
     # akrherz 2023-Dec-12: tests that fail on GDAL 3.8, awaiting upstream rasterio release
-    {% set tests_to_skip = "test_reproject_view" %}
-    {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata" %}
-    {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata_nan" %}
-    {% set tests_to_skip = tests_to_skip + " or test_reproject_dst_nodata_default" %}
-    {% set tests_to_skip = tests_to_skip + " or test_resampling_rms" %}
+    {% set tests_to_skip = "test_resampling_rms" %}
     {% set tests_to_skip = tests_to_skip + " or test_merge_precision" %}
+    # skip linux tests for cross-compiled targets
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
+    - python -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [win]
     - pip check
 about:
   home: https://github.com/rasterio/rasterio
