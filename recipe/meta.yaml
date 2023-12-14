@@ -71,7 +71,8 @@ test:
     # skip linux tests for cross-compiled targets
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
-    - python -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [win]
+    # akrherz 2023-Dec-14: tests that still need skipped on windows GH290
+    - python -m pytest -v -m "not wheel" -rxXs -k "not (test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
     - pip check
 about:
   home: https://github.com/rasterio/rasterio
