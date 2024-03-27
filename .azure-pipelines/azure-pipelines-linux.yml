@@ -84,6 +84,7 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
         SHORT_CONFIG: linux_ppc64le_numpy1.26python3.12.____cpython
   timeoutInMinutes: 360
+  variables: {}
 
   steps:
   # configure qemu binfmt-misc running.  This allows us to run docker containers
