@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<38]
-  number: 0
+  number: 1
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -22,6 +22,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -40,7 +41,6 @@ requirements:
     - click >=4
     - cligj >=0.5
     - importlib-metadata  # [py<310]
-    - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
     - proj
