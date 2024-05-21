@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<38 or ppc64le]
-  number: 1
+  number: 2
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -41,7 +41,6 @@ requirements:
     - click >=4
     - cligj >=0.5
     - importlib-metadata  # [py<310]
-    - {{ pin_compatible('numpy') }}
     - snuggs >=1.4.1
     - click-plugins
     - proj
