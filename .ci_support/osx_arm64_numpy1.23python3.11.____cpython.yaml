@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '16'
 libgdal:
-- '3.8'
+- '3.9'
 macos_machine:
 - arm64-apple-darwin20.0.0
 numpy:

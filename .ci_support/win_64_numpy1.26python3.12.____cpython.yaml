@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 libgdal:
-- '3.8'
+- '3.9'
 numpy:
 - '1.26'
 pin_run_as_build:
