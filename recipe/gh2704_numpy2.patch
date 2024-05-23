@@ -1,0 +1,24 @@
+diff -ru rasterio-1.3.10.orig/tests/test_gdal_raster_io.py rasterio-1.3.10/tests/test_gdal_raster_io.py
+--- rasterio-1.3.10.orig/tests/test_gdal_raster_io.py	2024-05-23 09:04:23.050581069 -0500
++++ rasterio-1.3.10/tests/test_gdal_raster_io.py	2024-05-23 09:09:38.931121610 -0500
+@@ -19,7 +19,7 @@
+ 
+ def image(height, width, dtype):
+     """An array with sequential elements"""
+-    return np.array(range(height * width)).astype(dtype).reshape(height, width)
++    return np.arange(0, height*width, dtype=dtype).reshape(height, width)
+ 
+ 
+ dtypes = ['uint8', 'uint16', 'int16', 'uint32', 'int32', 'float32', 'float64']
+diff -ru rasterio-1.3.10.orig/tests/test_rio_merge.py rasterio-1.3.10/tests/test_rio_merge.py
+--- rasterio-1.3.10.orig/tests/test_rio_merge.py	2024-05-23 09:04:23.052581097 -0500
++++ rasterio-1.3.10/tests/test_rio_merge.py	2024-05-23 09:10:10.843580543 -0500
+@@ -486,7 +486,7 @@
+ 
+     with pytest.warns(UserWarning):
+         rv, transform = merge(datasets, nodata=9999)
+-    assert not (rv == np.uint8(9999)).any()
++    assert not (rv == (9999 % 256)).any()
+ 
+ def test_merge_rgb(tmpdir, runner):
+     """Get back original image"""
