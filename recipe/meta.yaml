@@ -10,6 +10,7 @@ source:
   sha256: 0da4bea271a7f2ef2c44f528245a4f5c76ec635d075a0bd834300c75924b62c5
   patches:
     - gh2704_numpy2.patch
+    - gh2805_numpy2.patch
 
 build:
   skip: true  # [py<38 or ppc64le]
