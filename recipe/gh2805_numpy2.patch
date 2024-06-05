@@ -1,0 +1,32 @@
+diff -ru rasterio-1.3.10.orig/rasterio/_io.pyx rasterio-1.3.10/rasterio/_io.pyx
+--- rasterio-1.3.10.orig/rasterio/_io.pyx	2024-05-23 09:04:23.056581155 -0500
++++ rasterio-1.3.10/rasterio/_io.pyx	2024-06-05 12:50:54.481875690 -0500
+@@ -1725,7 +1725,7 @@
+                 arr = arr.filled(fill_value)
+ 
+         else:
+-            arr = np.array(arr, copy=False)
++            arr = np.asanyarray(arr)
+ 
+         if indexes is None:
+             indexes = self.indexes
+diff -ru rasterio-1.3.10.orig/rasterio/_warp.pyx rasterio-1.3.10/rasterio/_warp.pyx
+--- rasterio-1.3.10.orig/rasterio/_warp.pyx	2024-05-23 09:04:23.057581169 -0500
++++ rasterio-1.3.10/rasterio/_warp.pyx	2024-06-05 12:50:33.905654929 -0500
+@@ -368,7 +368,7 @@
+                 # source is a masked array
+                 src_nodata = source.fill_value
+             # ensure data converted to numpy array
+-            source = np.array(source, copy=False)
++            source = np.asanyarray(source)
+             # Convert 2D single-band arrays to 3D multi-band.
+             if len(source.shape) == 2:
+                 source = source.reshape(1, *source.shape)
+@@ -410,7 +410,7 @@
+             if not dst_crs:
+                 raise CRSError("Missing dst_crs.")
+             # ensure data converted to numpy array
+-            destination = np.array(destination, copy=False)
++            destination = np.asanyarray(destination)
+             if len(destination.shape) == 2:
+                 destination = destination.reshape(1, *destination.shape)
