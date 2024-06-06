@@ -11,10 +11,11 @@ source:
   patches:
     - gh2704_numpy2.patch
     - gh2805_numpy2.patch
+    - gh3091_gdal39.patch
 
 build:
   skip: true  # [py<38 or ppc64le]
-  number: 2
+  number: 3
   entry_points:
     - rio = rasterio.rio.main:main_group
 
