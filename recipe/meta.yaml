@@ -11,6 +11,7 @@ source:
   patches:
     - gh2704_numpy2.patch
     - gh2805_numpy2.patch
+    - gh3091_gdal39.patch
 
 build:
   skip: true  # [py<38 or ppc64le]
