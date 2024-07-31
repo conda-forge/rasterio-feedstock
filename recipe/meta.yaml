@@ -14,8 +14,7 @@ source:
     - gh3091_gdal39.patch
 
 build:
-  skip: true  # [py<38 or ppc64le]
-  number: 4
+  number: 5
   entry_points:
     - rio = rasterio.rio.main:main_group
 
