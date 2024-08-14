@@ -58,6 +58,7 @@ test:
     - packaging
     - hypothesis
     - shapely
+    - fsspec
   files:
     - test_data/test.tif
   imports:
