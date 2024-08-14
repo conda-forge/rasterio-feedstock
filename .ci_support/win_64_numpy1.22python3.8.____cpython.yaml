@@ -5,7 +5,7 @@ c_stdlib:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
+- conda-forge rasterio_dev
 cxx_compiler:
 - vs2019
 libgdal:
