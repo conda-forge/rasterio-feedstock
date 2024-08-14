@@ -80,6 +80,8 @@ test:
     {% set tests_to_skip = tests_to_skip + " or test_reproject_dst_nodata_default" %}
     # unknown numpy 2 segfault
     {% set tests_to_skip = tests_to_skip + " or test_merge_out_of_range_nodata" %}
+    # akrherz 2024-Aug-14 Flapping test slightly over 200ms deadline
+    {% set tests_to_skip = tests_to_skip + " or test_outer_boundless_pixel_fidelity" %}  # [osx]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
     - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
