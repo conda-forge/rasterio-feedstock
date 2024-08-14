@@ -59,6 +59,8 @@ test:
     - hypothesis
     - shapely
     - fsspec
+    - requests
+    - aiohttp
   files:
     - test_data/test.tif
   imports:
