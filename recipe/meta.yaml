@@ -1,20 +1,16 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.3.10" %}
+{% set version = "1.4b1" %}
 
 package:
   name: rasterio
   version: {{ version }}
 
 source:
-  url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 0da4bea271a7f2ef2c44f528245a4f5c76ec635d075a0bd834300c75924b62c5
-  patches:
-    - gh2704_numpy2.patch
-    - gh2805_numpy2.patch
-    - gh3091_gdal39.patch
+  url: https://github.com/rasterio/rasterio/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 5d4d7f83e271092020fca253cb393489b306613debdf4eff4c3cbd82aa09c1b0
 
 build:
-  number: 5
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
