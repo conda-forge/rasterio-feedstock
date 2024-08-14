@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [py<39]
   entry_points:
     - rio = rasterio.rio.main:main_group
 
