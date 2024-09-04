@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.3.10" %}
+{% set version = "1.3.11" %}
 
 package:
   name: rasterio
@@ -7,14 +7,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 0da4bea271a7f2ef2c44f528245a4f5c76ec635d075a0bd834300c75924b62c5
-  patches:
-    - gh2704_numpy2.patch
-    - gh2805_numpy2.patch
-    - gh3091_gdal39.patch
+  sha256: 398d206cc5d4e1b297a85257f0e892ac4c956a5fae5faaff918fa6032fa68547
 
 build:
-  number: 5
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -34,6 +30,7 @@ requirements:
     - numpy
     - libgdal
     - proj
+    - setuptools
   run:
     - python
     - setuptools >=0.9.8
