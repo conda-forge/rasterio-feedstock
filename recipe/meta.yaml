@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.4b2" %}
+{% set version = "1.4.0rc2" %}
 
 package:
   name: rasterio
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/rasterio/rasterio/archive/refs/tags/{{ version }}.tar.gz
-  sha256: b4636ac5003f281885200a1628ec9f6735ba435c4217303aad3da4896137bca3
+  sha256: 29695e708def7d84d45fbedcdf210f7b966b9d21f55f7a32bc041ac1e551e56a
 
 build:
   number: 0
