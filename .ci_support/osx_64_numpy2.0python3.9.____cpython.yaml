@@ -31,7 +31,7 @@ pin_run_as_build:
 proj:
 - '9.4'
 python:
-- 3.12.* *_cpython
+- 3.9.* *_cpython
 target_platform:
 - osx-64
 zip_keys:
@@ -39,3 +39,4 @@ zip_keys:
   - cxx_compiler_version
 - - python
   - numpy
+  - channel_sources

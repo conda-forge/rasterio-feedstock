@@ -29,7 +29,7 @@ pin_run_as_build:
 proj:
 - '9.4'
 python:
-- 3.10.* *_cpython
+- 3.11.* *_cpython
 target_platform:
 - linux-64
 zip_keys:
@@ -39,3 +39,4 @@ zip_keys:
   - cdt_name
 - - python
   - numpy
+  - channel_sources
