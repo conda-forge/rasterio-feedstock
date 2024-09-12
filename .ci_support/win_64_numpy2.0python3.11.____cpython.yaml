@@ -19,9 +19,10 @@ pin_run_as_build:
 proj:
 - '9.4'
 python:
-- 3.9.* *_cpython
+- 3.11.* *_cpython
 target_platform:
 - win-64
 zip_keys:
 - - python
   - numpy
+  - channel_sources

@@ -1,3 +1,5 @@
+BUILD:
+- aarch64-conda_cos7-linux-gnu
 c_compiler:
 - gcc
 c_compiler_version:
@@ -6,10 +8,12 @@ c_stdlib:
 - sysroot
 c_stdlib_version:
 - '2.17'
+cdt_arch:
+- aarch64
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge
+- conda-forge/label/python_rc,conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -21,7 +25,7 @@ docker_image:
 libgdal:
 - '3.9'
 numpy:
-- '2.0'
+- '2'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -29,9 +33,9 @@ pin_run_as_build:
 proj:
 - '9.4'
 python:
-- 3.12.* *_cpython
+- 3.13.* *_cp313
 target_platform:
-- linux-64
+- linux-aarch64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
@@ -39,3 +43,4 @@ zip_keys:
   - cdt_name
 - - python
   - numpy
+  - channel_sources
