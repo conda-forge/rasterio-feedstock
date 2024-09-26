@@ -10,8 +10,6 @@ cxx_compiler:
 - vs2019
 gdal:
 - '3.9'
-numpy:
-- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -24,5 +22,4 @@ target_platform:
 - win-64
 zip_keys:
 - - python
-  - numpy
   - channel_sources

@@ -8,26 +8,26 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_numpy2.0python3.10.____cpython:
-        CONFIG: win_64_numpy2.0python3.10.____cpython
+      win_64_python3.10.____cpython:
+        CONFIG: win_64_python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_numpy2.0python3.10.____cpython
-      win_64_numpy2.0python3.11.____cpython:
-        CONFIG: win_64_numpy2.0python3.11.____cpython
+        SHORT_CONFIG: win_64_python3.10.____cpython
+      win_64_python3.11.____cpython:
+        CONFIG: win_64_python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_numpy2.0python3.11.____cpython
-      win_64_numpy2.0python3.12.____cpython:
-        CONFIG: win_64_numpy2.0python3.12.____cpython
+        SHORT_CONFIG: win_64_python3.11.____cpython
+      win_64_python3.12.____cpython:
+        CONFIG: win_64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_numpy2.0python3.12.____cpython
-      win_64_numpy2.0python3.9.____cpython:
-        CONFIG: win_64_numpy2.0python3.9.____cpython
+        SHORT_CONFIG: win_64_python3.12.____cpython
+      win_64_python3.13.____cp313:
+        CONFIG: win_64_python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_numpy2.0python3.9.____cpython
-      win_64_numpy2python3.13.____cp313:
-        CONFIG: win_64_numpy2python3.13.____cp313
+        SHORT_CONFIG: win_64_python3.13.____cp313
+      win_64_python3.9.____cpython:
+        CONFIG: win_64_python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: win_64_numpy2python3.13.____cp313
+        SHORT_CONFIG: win_64_python3.9.____cpython
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
