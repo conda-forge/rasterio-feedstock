@@ -58,6 +58,7 @@ test:
     - boto3 >=1.2.4
     - fsspec
     - hypothesis
+    - libgdal-netcdf
     - matplotlib-base
     - packaging
     - requests
