@@ -18,10 +18,8 @@ cxx_compiler_version:
 - '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
-libgdal:
+gdal:
 - '3.9'
-numpy:
-- '2.0'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -29,14 +27,13 @@ pin_run_as_build:
 proj:
 - '9.5'
 python:
-- 3.10.* *_cpython
+- 3.12.* *_cpython
 target_platform:
-- linux-ppc64le
+- linux-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
 - - c_stdlib_version
   - cdt_name
 - - python
-  - numpy
   - channel_sources

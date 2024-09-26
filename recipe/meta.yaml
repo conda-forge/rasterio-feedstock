@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.3.11" %}
+{% set version = "1.4.0" %}
 
 package:
   name: rasterio
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 398d206cc5d4e1b297a85257f0e892ac4c956a5fae5faaff918fa6032fa68547
+  sha256: 2750dc90d84b09fc27e469fb11cc2a972aee8b3a6589233c5859efc52efa0acc
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -19,7 +19,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy >=1.24                           # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -27,14 +27,14 @@ requirements:
     - python
     - pip
     - cython
-    - numpy
-    - libgdal
+    - numpy >=1.24
+    - gdal
     - proj
     - setuptools
   run:
     - python
     - setuptools >=0.9.8
-    - libgdal
+    - gdal
     - affine
     - attrs
     - certifi
@@ -54,10 +54,14 @@ test:
     - pytest >=2.8.2,<8
     - pytest-cov >=2.2.0
     - ipython >=2.0
+    - aiohttp
     - boto3 >=1.2.4
+    - fsspec
+    - hypothesis
+    - libgdal-netcdf
     - matplotlib-base
     - packaging
-    - hypothesis
+    - requests
     - shapely
   files:
     - test_data/test.tif
@@ -70,13 +74,9 @@ test:
     # skip linux tests for cross-compiled targets
     # xylar 2022-Jul-6: disabling test_search_gdal_data_debian and test_decimated_no_use_overview under win.
     #                   test_decimated_no_use_overview fails because of trying to overwrite an existing file.
-    # akrherz 2023-Feb-26: tests that fail on GDAL 3.6.2, but work on 3.6.0, shrug
-    {% set tests_to_skip = "test_reproject_view" %}
-    {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata" %}
-    {% set tests_to_skip = tests_to_skip + " or test_reproject_nodata_nan" %}
-    {% set tests_to_skip = tests_to_skip + " or test_reproject_dst_nodata_default" %}
     # unknown numpy 2 segfault
-    {% set tests_to_skip = tests_to_skip + " or test_merge_out_of_range_nodata" %}
+    {% set tests_to_skip = "test_merge_out_of_range_nodata" %}
+    # {% set tests_to_skip = tests_to_skip + " or test_<placeholder>" %}
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
     - python -m pytest -v -m "not wheel" -rxXs -k "not (test_search_gdal_data_debian or test_decimated_no_use_overview or test_copyfiles_same_dataset_another_name or {{ tests_to_skip }})" tests  # [win]
