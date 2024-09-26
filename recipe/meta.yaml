@@ -28,13 +28,13 @@ requirements:
     - pip
     - cython
     - numpy
-    - libgdal
+    - gdal
     - proj
     - setuptools
   run:
     - python
     - setuptools >=0.9.8
-    - libgdal
+    - gdal
     - affine
     - attrs
     - certifi
