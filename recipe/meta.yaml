@@ -19,7 +19,7 @@ requirements:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy >=1.24                           # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
@@ -27,7 +27,7 @@ requirements:
     - python
     - pip
     - cython
-    - numpy
+    - numpy >=1.24
     - gdal
     - proj
     - setuptools
@@ -55,6 +55,7 @@ test:
     - pytest-cov >=2.2.0
     - ipython >=2.0
     - boto3 >=1.2.4
+    - fsspec
     - matplotlib-base
     - packaging
     - hypothesis
