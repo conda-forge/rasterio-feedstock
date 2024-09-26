@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.3.11" %}
+{% set version = "1.4.0" %}
 
 package:
   name: rasterio
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 398d206cc5d4e1b297a85257f0e892ac4c956a5fae5faaff918fa6032fa68547
+  sha256: 2750dc90d84b09fc27e469fb11cc2a972aee8b3a6589233c5859efc52efa0acc
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
