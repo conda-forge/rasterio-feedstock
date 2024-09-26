@@ -54,11 +54,13 @@ test:
     - pytest >=2.8.2,<8
     - pytest-cov >=2.2.0
     - ipython >=2.0
+    - aiohttp
     - boto3 >=1.2.4
     - fsspec
+    - hypothesis
     - matplotlib-base
     - packaging
-    - hypothesis
+    - requests
     - shapely
   files:
     - test_data/test.tif
