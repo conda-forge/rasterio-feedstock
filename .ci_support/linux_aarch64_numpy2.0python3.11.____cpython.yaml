@@ -22,7 +22,7 @@ cxx_compiler_version:
 - '13'
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
-libgdal:
+gdal:
 - '3.9'
 numpy:
 - '2.0'
