@@ -1,5 +1,5 @@
-{% set tests_to_skip = "test_reproject_view" %}
-{% set version = "1.4.0" %}
+{% set tests_to_skip = "test_merge_out_of_range_nodata" %}
+{% set version = "1.4.1" %}
 
 package:
   name: rasterio
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: 2750dc90d84b09fc27e469fb11cc2a972aee8b3a6589233c5859efc52efa0acc
+  sha256: e91e93179e58f0a9ecd870ba2147c4d8014d98c3f2c34ae1c5510d6cfff92435
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -93,5 +93,4 @@ extra:
     - ocefpaf
     - ceholden
     - snowman2
-    - xylar
     - akrherz
