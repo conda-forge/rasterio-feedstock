@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_merge_out_of_range_nodata" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.2" %}
 
 package:
   name: rasterio
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: e91e93179e58f0a9ecd870ba2147c4d8014d98c3f2c34ae1c5510d6cfff92435
+  sha256: 266ef31f297def352f8824ff8f0695e86418a5b193557759f0f412fbb3af60df
 
 build:
   number: 0
