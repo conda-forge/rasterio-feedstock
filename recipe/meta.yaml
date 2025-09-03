@@ -28,13 +28,13 @@ requirements:
     - pip
     - cython
     - numpy >=1.24
-    - libgdal-core
+    - libgdal-core <3.11
     - proj
     - setuptools
   run:
     - python
     - setuptools >=0.9.8
-    - libgdal-core
+    - libgdal-core <3.11
     - affine
     - attrs
     - certifi
@@ -58,7 +58,7 @@ test:
     - boto3 >=1.2.4
     - fsspec
     - hypothesis
-    - libgdal-netcdf
+    - libgdal-netcdf <3.11
     - matplotlib-base
     - packaging
     - requests
