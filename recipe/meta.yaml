@@ -40,7 +40,6 @@ requirements:
     - certifi
     - click >=4
     - cligj >=0.5
-    - importlib-metadata  # [py<310]
     - snuggs >=1.4.1
     - click-plugins
     - proj
