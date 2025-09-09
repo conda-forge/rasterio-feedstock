@@ -38,7 +38,7 @@ requirements:
     - affine
     - attrs
     - certifi
-    - click >=4
+    - click >=4,!=8.2.* # https://github.com/pallets/click/issues/2939
     - cligj >=0.5
     - snuggs >=1.4.1
     - click-plugins
