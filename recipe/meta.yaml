@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
   sha256: dfa248fdc46f0e08ab957712b13a86d7cd49bce72f34b7fdca94af3b2d850181
+  patches:
+    - gh3360_mptest.patch
 
 build:
   number: 2

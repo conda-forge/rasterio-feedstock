@@ -1,0 +1,41 @@
+From b80bb64ff0d41f0945becefff13e064bbffe1e5d Mon Sep 17 00:00:00 2001
+From: Elliott Sales de Andrade <quantum.analyst@gmail.com>
+Date: Wed, 11 Jun 2025 05:05:00 -0400
+Subject: [PATCH] TST: Fix test fixture for test_reproject_error_propagation
+
+Pickling the HTTP server requires the 'fork' multiprocessing context,
+and in some places, `HTTPServer.server_name` returns something that
+doesn't work with curl. So force the 'fork' mode, and use
+`HTTPServer.server_address` instead.
+
+Also, remove the `network` marker, as it does nothing for fixtures and
+isn't required since that marker signifies _external_ networking.
+---
+ tests/test_warp.py | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/tests/test_warp.py b/tests/test_warp.py
+index af6c8ab4e..385325b74 100644
+--- a/tests/test_warp.py
++++ b/tests/test_warp.py
+@@ -2299,7 +2299,6 @@ def test_reproject_rpcs_approx_transformer(caplog):
+         assert "Created approximate transformer" in caplog.text
+ 
+ 
+-@pytest.mark.network
+ @pytest.fixture
+ def http_error_server(data):
+     """Serves files from the test data directory, poorly."""
+@@ -2309,9 +2308,10 @@ def http_error_server(data):
+ 
+     Handler = functools.partial(RangeRequestErrorHandler, directory=str(data))
+     httpd = http.server.HTTPServer(("", 0), Handler)
+-    p = multiprocessing.Process(target=httpd.serve_forever)
++    mp_context = multiprocessing.get_context("fork")
++    p = mp_context.Process(target=httpd.serve_forever)
+     p.start()
+-    yield f"{httpd.server_name}:{httpd.server_port}"
++    yield f"{httpd.server_address[0]}:{httpd.server_address[1]}"
+     p.terminate()
+     p.join()
+ 
