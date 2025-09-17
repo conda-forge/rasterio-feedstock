@@ -13,7 +13,7 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 proj:
-- '9.6'
+- '9.7'
 python:
 - 3.13.* *_cp313
 target_platform:
