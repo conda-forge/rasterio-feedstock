@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
   sha256: dfa248fdc46f0e08ab957712b13a86d7cd49bce72f34b7fdca94af3b2d850181
+  patches:
+    - gh3360_mptest.patch
 
 build:
-  number: 1
+  number: 2
   entry_points:
     - rio = rasterio.rio.main:main_group
 
@@ -28,19 +30,18 @@ requirements:
     - pip
     - cython
     - numpy >=1.24
-    - libgdal-core
+    - libgdal-core <3.11
     - proj
     - setuptools
   run:
     - python
     - setuptools >=0.9.8
-    - libgdal-core
+    - libgdal-core <3.11
     - affine
     - attrs
     - certifi
-    - click >=4
+    - click >=4,!=8.2.* # https://github.com/pallets/click/issues/2939
     - cligj >=0.5
-    - importlib-metadata  # [py<310]
     - snuggs >=1.4.1
     - click-plugins
     - proj
@@ -58,7 +59,7 @@ test:
     - boto3 >=1.2.4
     - fsspec
     - hypothesis
-    - libgdal-netcdf
+    - libgdal-netcdf <3.11
     - matplotlib-base
     - packaging
     - requests
