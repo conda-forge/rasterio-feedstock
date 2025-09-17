@@ -12,7 +12,7 @@ source:
     - gh3360_mptest.patch
 
 build:
-  number: 2
+  number: 3
   entry_points:
     - rio = rasterio.rio.main:main_group
 
