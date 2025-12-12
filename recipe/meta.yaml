@@ -1,18 +1,16 @@
 {% set tests_to_skip = "test_merge_out_of_range_nodata" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 
 package:
   name: rasterio
   version: {{ version }}
 
 source:
-  url: https://github.com/mapbox/rasterio/archive/{{ version }}.tar.gz
-  sha256: dfa248fdc46f0e08ab957712b13a86d7cd49bce72f34b7fdca94af3b2d850181
-  patches:
-    - gh3360_mptest.patch
+  url: https://github.com/rasterio/rasterio/archive/{{ version }}.tar.gz
+  sha256: 056bc5ad56600f27fbebdaec76ec8c1ff66f2adf6b54d33fabb816d1a9e914d5
 
 build:
-  number: 3
+  number: 0
   entry_points:
     - rio = rasterio.rio.main:main_group
 
