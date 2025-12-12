@@ -8,6 +8,8 @@ channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2022
+libgdal_core:
+- '3.11'
 pin_run_as_build:
   python:
     min_pin: x.x
