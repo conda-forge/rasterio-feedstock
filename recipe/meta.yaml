@@ -1,4 +1,4 @@
-{% set tests_to_skip = "test_merge_out_of_range_nodata" %}
+{% set tests_to_skip = "test_merge_out_of_range_nodata or test_rio_env_no_credentials" %}
 {% set version = "1.5.0" %}
 
 package:
@@ -78,7 +78,9 @@ test:
     # xylar 2022-Jul-6: disabling test_search_gdal_data_debian and test_decimated_no_use_overview under win.
     #                   test_decimated_no_use_overview fails because of trying to overwrite an existing file.
     # unknown numpy 2 segfault
-    {% set tests_to_skip = "test_merge_out_of_range_nodata" %}
+    # test_rio_env_no_credentials writes an indented AWS credentials file, which recent
+    # botocore rejects with InvalidConfigError instead of reaching S3.
+    {% set tests_to_skip = "test_merge_out_of_range_nodata or test_rio_env_no_credentials" %}
     # {% set tests_to_skip = tests_to_skip + " or test_<placeholder>" %}
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [linux and build_platform == target_platform]
     - $PYTHON -m pytest -v -m "not wheel" -rxXs -k "not ({{ tests_to_skip }})" tests  # [osx]
