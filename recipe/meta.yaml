@@ -8,6 +8,9 @@ package:
 source:
   url: https://github.com/rasterio/rasterio/archive/{{ version }}.tar.gz
   sha256: f5d5cab866545e85a21b1921458ee8c711e23489ccc44fa66c6f70443a3ecae6
+  patches:
+    # Backport of https://github.com/rasterio/rasterio/pull/3529, needed with GDAL >=3.12.2.
+    - 3529-warp-xfail.patch
 
 build:
   number: 1
