@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/rasterio/rasterio/archive/{{ version }}.tar.gz
-  sha256: 027350515d5b13633e25bd26d49d7ac4445f32fcdb14389186cb6312a447b490
+  sha256: eb8e7062fc0bcdef635e43fd1632b15aa983b71476bec1e1f75d618326fb9e4a
 
 build:
   number: 0
