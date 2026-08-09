@@ -44,6 +44,18 @@ jobs:
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
         CONFIG_SHORT: linux_64_python3.14.____cp314
+      linux_64_python3.14.____cp314t:
+        CONFIG: linux_64_python3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
+        docker_run_args: ''
+        build_workspace_dir: build_artifacts
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: true
+        tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: linux_64_python3.14.____cp314t
       linux_aarch64_python3.12.____cpython:
         CONFIG: linux_aarch64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -80,6 +92,18 @@ jobs:
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
         CONFIG_SHORT: linux_aarch64_python3.14.____cp314
+      linux_aarch64_python3.14.____cp314t:
+        CONFIG: linux_aarch64_python3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
+        docker_run_args: ''
+        build_workspace_dir: build_artifacts
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: true
+        tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: linux_aarch64_python3.14.____cp314t
       linux_ppc64le_python3.12.____cpython:
         CONFIG: linux_ppc64le_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -116,6 +140,18 @@ jobs:
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
         CONFIG_SHORT: linux_ppc64le_python3.14.____cp314
+      linux_ppc64le_python3.14.____cp314t:
+        CONFIG: linux_ppc64le_python3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma10
+        docker_run_args: ''
+        build_workspace_dir: build_artifacts
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: true
+        tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: linux_ppc64le_python3.14.____cp314t
   timeoutInMinutes: 360
   variables: {}
 
