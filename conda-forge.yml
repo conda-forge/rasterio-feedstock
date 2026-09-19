@@ -1,9 +1,5 @@
-azure:
-  store_build_artifacts: true
 build_platform:
-  linux_aarch64: linux_64
   linux_ppc64le: linux_64
-  osx_arm64: osx_64
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
@@ -15,5 +11,8 @@ provider:
   linux_aarch64: default
   linux_ppc64le: default
   osx: azure
+  osx_arm64: default
   win: azure
 test: native_and_emulated
+workflow_settings:
+  store_build_artifacts: true
