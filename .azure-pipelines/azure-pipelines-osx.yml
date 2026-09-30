@@ -55,7 +55,7 @@ jobs:
       osx_arm64_python3.12.____cpython:
         CONFIG: osx_arm64_python3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -66,7 +66,7 @@ jobs:
       osx_arm64_python3.13.____cp313:
         CONFIG: osx_arm64_python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -77,7 +77,7 @@ jobs:
       osx_arm64_python3.14.____cp314:
         CONFIG: osx_arm64_python3.14.____cp314
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -88,7 +88,7 @@ jobs:
       osx_arm64_python3.14.____cp314t:
         CONFIG: osx_arm64_python3.14.____cp314t
         UPLOAD_PACKAGES: 'True'
-        VMIMAGE: macOS-15
+        VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
         free_disk_space: skip
         pagefile_size: 0
@@ -126,15 +126,18 @@ jobs:
   - script: |
       export ARTIFACT_STAGING_DIR="$(Build.ArtifactStagingDirectory)"
       # Archive everything in CONDA_BLD_PATH except environments
-      export BLD_ARTIFACT_PREFIX=conda_artifacts
+      export BLD_ARTIFACT_PREFIX=conda_pkgs
       export CI=azure
       export CI_RUN_ID=$(build.BuildNumber).$(system.JobAttempt)
       export CONDA_BLD_PATH=$(build_workspace_dir)
       export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
       export MINIFORGE_HOME=$(tools_install_dir)
       if [[ "$AGENT_JOBSTATUS" == "Failed" ]]; then
+        # Use a distinct prefix on failure (to match GHA).
+        export BLD_ARTIFACT_PREFIX=conda_pkgs_failed
         # Archive the CONDA_BLD_PATH environments only when the job fails
         export ENV_ARTIFACT_PREFIX=conda_envs
+        export WRK_ARTIFACT_PREFIX=conda_work
       fi
       ./.scripts/create_conda_build_artifacts.sh
     displayName: Prepare conda build artifacts
@@ -146,6 +149,13 @@ jobs:
     inputs:
       targetPath: $(BLD_ARTIFACT_PATH)
       artifactName: $(BLD_ARTIFACT_NAME)
+
+  - task: PublishPipelineArtifact@1
+    displayName: Store conda work directoryartifacts
+    condition: not(eq(variables.WRK_ARTIFACT_PATH, ''))
+    inputs:
+      targetPath: $(WRK_ARTIFACT_PATH)
+      artifactName: $(WRK_ARTIFACT_NAME)
 
   - task: PublishPipelineArtifact@1
     displayName: Store conda build environment artifacts
