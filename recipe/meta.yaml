@@ -1,5 +1,5 @@
 {% set tests_to_skip = "test_merge_out_of_range_nodata or test_rio_env_no_credentials" %}
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 
 package:
   name: rasterio
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/rasterio/rasterio/archive/{{ version }}.tar.gz
-  sha256: eb8e7062fc0bcdef635e43fd1632b15aa983b71476bec1e1f75d618326fb9e4a
+  sha256: a3342f6a5102d8bb07d831b2390e217a2fd84afc49efbfe3e7cf36801de99c63
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<312]
   entry_points:
     - rio = rasterio.rio.main:main_group
