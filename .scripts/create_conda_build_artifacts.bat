@@ -23,7 +23,11 @@ rem ENV_ARTIFACT_NAME
 rem ENV_ARTIFACT_PATH
 rem WRK_ARTIFACT_NAME
 rem WRK_ARTIFACT_PATH
-call "%MINIFORGE_HOME%\Scripts\activate.bat"
+set "PATH=%USERPROFILE%\.pixi\bin;%PATH%"
+set "ACTIVATE_PIXI=%TMP%\pixi-activate-%RANDOM%.bat"
+pixi shell-hook --environment build > "%ACTIVATE_PIXI%"
+if !errorlevel! neq 0 exit /b !errorlevel!
+call "%ACTIVATE_PIXI%"
 if !errorlevel! neq 0 exit /b !errorlevel!
 
 rem Check that the conda-build directory exists

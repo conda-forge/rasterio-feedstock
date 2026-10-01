@@ -3,11 +3,13 @@ About rasterio-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rasterio-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/rasterio/rasterio
+Home: https://pypi.org/project/rasterio/
 
 Package license: BSD-3-Clause
 
-Summary: Rasterio reads and writes geospatial raster datasets
+Summary: Fast and direct raster I/O for use with NumPy
+
+Documentation: https://rasterio.readthedocs.io/
 
 Current build status
 ====================

@@ -1,0 +1,260 @@
+# -*- mode: toml -*-
+# This file was generated automatically from conda-smithy. To update this configuration,
+# update the conda-forge.yml and/or the recipe/meta.yaml.
+"$schema" = "https://pixi.sh/v0.59.0/schema/manifest/schema.json"
+
+[workspace]
+name = "rasterio-feedstock"
+version = "2026.9.23"  # conda-smithy version used to generate this file
+description = "Pixi configuration for conda-forge/rasterio-feedstock"
+authors = ["@conda-forge/rasterio"]
+channels = ["conda-forge"]
+platforms = ["linux-64", "linux-aarch64", "linux-ppc64le", "osx-64", "osx-arm64", "win-64", "win-arm64"]
+requires-pixi = ">=0.59.0"
+
+[tasks.build-locally]
+cmd = "pixi exec --force-reinstall --list='^python$' python ./build-locally.py"
+description = "Build packages locally using the same setup scripts used in conda-forge's CI"
+[tasks.smithy]
+cmd = "pixi exec --force-reinstall --list='^conda-smithy$' conda-smithy"
+description = "Run conda-smithy. Pass necessary arguments."
+[tasks.rerender]
+cmd = "pixi exec --force-reinstall --list='^conda-smithy$' conda-smithy rerender"
+description = "Rerender the feedstock."
+
+[tasks.lint]
+cmd = "pixi exec --list='^conda-smithy$' conda-smithy lint --conda-forge recipe"
+description = "Lint the feedstock recipe"
+
+[feature.build.dependencies]
+conda-build = ">=26.3"
+conda-forge-ci-setup = "4.*"
+rattler-build = "*"
+
+[feature.build.tasks.inspect-all]
+cmd = "inspect_artifacts --all-packages"
+description = "List contents of all packages found in rattler-build build directory."
+[feature.build.tasks.build]
+cmd = "rattler-build build --recipe recipe"
+description = "Build rasterio-feedstock directly (without setup scripts), no particular variant specified"
+[feature.build.tasks."build-linux_64_python3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_python3.12.____cpython.yaml --target-platform linux-64"
+description = "Build rasterio-feedstock with variant linux_64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."debug-linux_64_python3.12.____cpython"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_python3.12.____cpython.yaml --target-platform linux-64"
+description = "Debug rasterio-feedstock with variant linux_64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_64_python3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_python3.12.____cpython.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_64_python3.12.____cpython"
+[feature.build.tasks."build-linux_64_python3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_python3.13.____cp313.yaml --target-platform linux-64"
+description = "Build rasterio-feedstock with variant linux_64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."debug-linux_64_python3.13.____cp313"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_python3.13.____cp313.yaml --target-platform linux-64"
+description = "Debug rasterio-feedstock with variant linux_64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_64_python3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_python3.13.____cp313.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_64_python3.13.____cp313"
+[feature.build.tasks."build-linux_64_python3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_python3.14.____cp314.yaml --target-platform linux-64"
+description = "Build rasterio-feedstock with variant linux_64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."debug-linux_64_python3.14.____cp314"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_python3.14.____cp314.yaml --target-platform linux-64"
+description = "Debug rasterio-feedstock with variant linux_64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_64_python3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_python3.14.____cp314.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_64_python3.14.____cp314"
+[feature.build.tasks."build-linux_64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_python3.14.____cp314t.yaml --target-platform linux-64"
+description = "Build rasterio-feedstock with variant linux_64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."debug-linux_64_python3.14.____cp314t"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_64_python3.14.____cp314t.yaml --target-platform linux-64"
+description = "Debug rasterio-feedstock with variant linux_64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_python3.14.____cp314t.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_64_python3.14.____cp314t"
+[feature.build.tasks."build-linux_aarch64_python3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_python3.12.____cpython.yaml --target-platform linux-aarch64"
+description = "Build rasterio-feedstock with variant linux_aarch64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."debug-linux_aarch64_python3.12.____cpython"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_python3.12.____cpython.yaml --target-platform linux-aarch64"
+description = "Debug rasterio-feedstock with variant linux_aarch64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_aarch64_python3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_python3.12.____cpython.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_aarch64_python3.12.____cpython"
+[feature.build.tasks."build-linux_aarch64_python3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_python3.13.____cp313.yaml --target-platform linux-aarch64"
+description = "Build rasterio-feedstock with variant linux_aarch64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."debug-linux_aarch64_python3.13.____cp313"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_python3.13.____cp313.yaml --target-platform linux-aarch64"
+description = "Debug rasterio-feedstock with variant linux_aarch64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_aarch64_python3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_python3.13.____cp313.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_aarch64_python3.13.____cp313"
+[feature.build.tasks."build-linux_aarch64_python3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_python3.14.____cp314.yaml --target-platform linux-aarch64"
+description = "Build rasterio-feedstock with variant linux_aarch64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."debug-linux_aarch64_python3.14.____cp314"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_python3.14.____cp314.yaml --target-platform linux-aarch64"
+description = "Debug rasterio-feedstock with variant linux_aarch64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_aarch64_python3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_python3.14.____cp314.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_aarch64_python3.14.____cp314"
+[feature.build.tasks."build-linux_aarch64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_python3.14.____cp314t.yaml --target-platform linux-aarch64"
+description = "Build rasterio-feedstock with variant linux_aarch64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."debug-linux_aarch64_python3.14.____cp314t"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_aarch64_python3.14.____cp314t.yaml --target-platform linux-aarch64"
+description = "Debug rasterio-feedstock with variant linux_aarch64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_aarch64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_python3.14.____cp314t.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_aarch64_python3.14.____cp314t"
+[feature.build.tasks."build-linux_ppc64le_python3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_python3.12.____cpython.yaml --target-platform linux-ppc64le"
+description = "Build rasterio-feedstock with variant linux_ppc64le_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."debug-linux_ppc64le_python3.12.____cpython"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_ppc64le_python3.12.____cpython.yaml --target-platform linux-ppc64le"
+description = "Debug rasterio-feedstock with variant linux_ppc64le_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_ppc64le_python3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_python3.12.____cpython.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_ppc64le_python3.12.____cpython"
+[feature.build.tasks."build-linux_ppc64le_python3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_python3.13.____cp313.yaml --target-platform linux-ppc64le"
+description = "Build rasterio-feedstock with variant linux_ppc64le_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."debug-linux_ppc64le_python3.13.____cp313"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_ppc64le_python3.13.____cp313.yaml --target-platform linux-ppc64le"
+description = "Debug rasterio-feedstock with variant linux_ppc64le_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_ppc64le_python3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_python3.13.____cp313.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_ppc64le_python3.13.____cp313"
+[feature.build.tasks."build-linux_ppc64le_python3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_python3.14.____cp314.yaml --target-platform linux-ppc64le"
+description = "Build rasterio-feedstock with variant linux_ppc64le_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."debug-linux_ppc64le_python3.14.____cp314"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_ppc64le_python3.14.____cp314.yaml --target-platform linux-ppc64le"
+description = "Debug rasterio-feedstock with variant linux_ppc64le_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_ppc64le_python3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_python3.14.____cp314.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_ppc64le_python3.14.____cp314"
+[feature.build.tasks."build-linux_ppc64le_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_python3.14.____cp314t.yaml --target-platform linux-ppc64le"
+description = "Build rasterio-feedstock with variant linux_ppc64le_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."debug-linux_ppc64le_python3.14.____cp314t"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/linux_ppc64le_python3.14.____cp314t.yaml --target-platform linux-ppc64le"
+description = "Debug rasterio-feedstock with variant linux_ppc64le_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."inspect-linux_ppc64le_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_python3.14.____cp314t.yaml"
+description = "List contents of rasterio-feedstock packages built for variant linux_ppc64le_python3.14.____cp314t"
+[feature.build.tasks."build-osx_64_python3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_python3.12.____cpython.yaml --target-platform osx-64"
+description = "Build rasterio-feedstock with variant osx_64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."debug-osx_64_python3.12.____cpython"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_python3.12.____cpython.yaml --target-platform osx-64"
+description = "Debug rasterio-feedstock with variant osx_64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_64_python3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_python3.12.____cpython.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_64_python3.12.____cpython"
+[feature.build.tasks."build-osx_64_python3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_python3.13.____cp313.yaml --target-platform osx-64"
+description = "Build rasterio-feedstock with variant osx_64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."debug-osx_64_python3.13.____cp313"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_python3.13.____cp313.yaml --target-platform osx-64"
+description = "Debug rasterio-feedstock with variant osx_64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_64_python3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_python3.13.____cp313.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_64_python3.13.____cp313"
+[feature.build.tasks."build-osx_64_python3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_python3.14.____cp314.yaml --target-platform osx-64"
+description = "Build rasterio-feedstock with variant osx_64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."debug-osx_64_python3.14.____cp314"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_python3.14.____cp314.yaml --target-platform osx-64"
+description = "Debug rasterio-feedstock with variant osx_64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_64_python3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_python3.14.____cp314.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_64_python3.14.____cp314"
+[feature.build.tasks."build-osx_64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_python3.14.____cp314t.yaml --target-platform osx-64"
+description = "Build rasterio-feedstock with variant osx_64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."debug-osx_64_python3.14.____cp314t"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_64_python3.14.____cp314t.yaml --target-platform osx-64"
+description = "Debug rasterio-feedstock with variant osx_64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_python3.14.____cp314t.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_64_python3.14.____cp314t"
+[feature.build.tasks."build-osx_arm64_python3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_python3.12.____cpython.yaml --target-platform osx-arm64"
+description = "Build rasterio-feedstock with variant osx_arm64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."debug-osx_arm64_python3.12.____cpython"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_python3.12.____cpython.yaml --target-platform osx-arm64"
+description = "Debug rasterio-feedstock with variant osx_arm64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_arm64_python3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_python3.12.____cpython.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_arm64_python3.12.____cpython"
+[feature.build.tasks."build-osx_arm64_python3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_python3.13.____cp313.yaml --target-platform osx-arm64"
+description = "Build rasterio-feedstock with variant osx_arm64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."debug-osx_arm64_python3.13.____cp313"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_python3.13.____cp313.yaml --target-platform osx-arm64"
+description = "Debug rasterio-feedstock with variant osx_arm64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_arm64_python3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_python3.13.____cp313.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_arm64_python3.13.____cp313"
+[feature.build.tasks."build-osx_arm64_python3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_python3.14.____cp314.yaml --target-platform osx-arm64"
+description = "Build rasterio-feedstock with variant osx_arm64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."debug-osx_arm64_python3.14.____cp314"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_python3.14.____cp314.yaml --target-platform osx-arm64"
+description = "Debug rasterio-feedstock with variant osx_arm64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_arm64_python3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_python3.14.____cp314.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_arm64_python3.14.____cp314"
+[feature.build.tasks."build-osx_arm64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_python3.14.____cp314t.yaml --target-platform osx-arm64"
+description = "Build rasterio-feedstock with variant osx_arm64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."debug-osx_arm64_python3.14.____cp314t"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/osx_arm64_python3.14.____cp314t.yaml --target-platform osx-arm64"
+description = "Debug rasterio-feedstock with variant osx_arm64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."inspect-osx_arm64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_python3.14.____cp314t.yaml"
+description = "List contents of rasterio-feedstock packages built for variant osx_arm64_python3.14.____cp314t"
+[feature.build.tasks."build-win_64_python3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_python3.12.____cpython.yaml --target-platform win-64"
+description = "Build rasterio-feedstock with variant win_64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."debug-win_64_python3.12.____cpython"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_python3.12.____cpython.yaml --target-platform win-64"
+description = "Debug rasterio-feedstock with variant win_64_python3.12.____cpython directly (without setup scripts)"
+[feature.build.tasks."inspect-win_64_python3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_python3.12.____cpython.yaml"
+description = "List contents of rasterio-feedstock packages built for variant win_64_python3.12.____cpython"
+[feature.build.tasks."build-win_64_python3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_python3.13.____cp313.yaml --target-platform win-64"
+description = "Build rasterio-feedstock with variant win_64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."debug-win_64_python3.13.____cp313"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_python3.13.____cp313.yaml --target-platform win-64"
+description = "Debug rasterio-feedstock with variant win_64_python3.13.____cp313 directly (without setup scripts)"
+[feature.build.tasks."inspect-win_64_python3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_python3.13.____cp313.yaml"
+description = "List contents of rasterio-feedstock packages built for variant win_64_python3.13.____cp313"
+[feature.build.tasks."build-win_64_python3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_python3.14.____cp314.yaml --target-platform win-64"
+description = "Build rasterio-feedstock with variant win_64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."debug-win_64_python3.14.____cp314"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_python3.14.____cp314.yaml --target-platform win-64"
+description = "Debug rasterio-feedstock with variant win_64_python3.14.____cp314 directly (without setup scripts)"
+[feature.build.tasks."inspect-win_64_python3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_python3.14.____cp314.yaml"
+description = "List contents of rasterio-feedstock packages built for variant win_64_python3.14.____cp314"
+[feature.build.tasks."build-win_64_python3.14.____cp314t"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_python3.14.____cp314t.yaml --target-platform win-64"
+description = "Build rasterio-feedstock with variant win_64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."debug-win_64_python3.14.____cp314t"]
+cmd = "rattler-build debug setup --recipe recipe -m .ci_support/win_64_python3.14.____cp314t.yaml --target-platform win-64"
+description = "Debug rasterio-feedstock with variant win_64_python3.14.____cp314t directly (without setup scripts)"
+[feature.build.tasks."inspect-win_64_python3.14.____cp314t"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_python3.14.____cp314t.yaml"
+description = "List contents of rasterio-feedstock packages built for variant win_64_python3.14.____cp314t"
+
+[environments]
+build = ["build"]
+# This is a copy of 'build', to be enabled by build_steps.sh during Docker builds
+# __PLATFORM_SPECIFIC_ENV__ = ["build"]
