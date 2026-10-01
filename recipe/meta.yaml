@@ -64,6 +64,7 @@ test:
     - packaging
     - requests
     - shapely
+    - ca-certificates
   files:
     - test_data/test.tif
   imports:
