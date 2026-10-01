@@ -16,3 +16,5 @@ provider:
 test: native_and_emulated
 workflow_settings:
   store_build_artifacts: true
+conda_build_tool: rattler-build
+conda_install_tool: pixi
