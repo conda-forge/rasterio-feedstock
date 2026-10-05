@@ -11,7 +11,7 @@ c_stdlib:
 c_stdlib_version:
 - '11.0'
 channel_sources:
-- conda-forge
+- conda-forge,conda-forge/label/python_rc
 channel_targets:
 - conda-forge main
 cxx_compiler:
@@ -29,7 +29,7 @@ pin_run_as_build:
 proj:
 - '9.8'
 python:
-- 3.14.* *_cp314
+- 3.15.* *_cp315
 target_platform:
 - osx-64
 zip_keys:
