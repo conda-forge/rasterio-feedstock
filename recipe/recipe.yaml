@@ -8,8 +8,8 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/r/rasterio/rasterio-${{ version }}.tar.gz
-  sha256: e65a15b7bd22ce8f8ce8159856669dc9fafabf66cde6156e8f8e71d55abcd515
+  url: https://github.com/rasterio/rasterio/archive/refs/tags/${{ version }}.tar.gz
+  sha256: a3342f6a5102d8bb07d831b2390e217a2fd84afc49efbfe3e7cf36801de99c63
 
 build:
   number: 0
@@ -67,7 +67,7 @@ tests:
       recipe:
         - run_test.py
       source:
-       - tests
+       - tests/
     requirements:
       run:
         # awaiting upstream pytest=8 support
@@ -86,7 +86,7 @@ tests:
         - shapely
         - ca-certificates
     script:
-      file: run_test.py
+      - python -m pytest -v -m "not wheel" -rxXs tests/
 
 about:
   summary: Fast and direct raster I/O for use with NumPy
