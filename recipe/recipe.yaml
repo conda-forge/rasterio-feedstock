@@ -1,0 +1,103 @@
+schema_version: 1
+
+context:
+  version: "1.5.2"
+
+package:
+  name: rasterio
+  version: ${{ version }}
+
+source:
+  url: https://github.com/rasterio/rasterio/archive/refs/tags/${{ version }}.tar.gz
+  sha256: a3342f6a5102d8bb07d831b2390e217a2fd84afc49efbfe3e7cf36801de99c63
+
+build:
+  number: 0
+  skip: match(python, "<3.12")
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - rio = rasterio.rio.main:main_group
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - cython >=3.1,<=3.3
+        - numpy >=2,<3
+    - ${{ compiler("c") }}
+    - ${{ compiler("cxx") }}
+    - ${{ stdlib("c") }}
+  host:
+    - python
+    - libgdal-core
+    - proj
+    - setuptools >=77.0.3
+    - cython >=3.1,<=3.3
+    - numpy >=2,<3
+    - pip
+  run:
+    - python
+    - libgdal-core
+    - cligj >=0.5
+    - snuggs >=1.4.1
+    - click-plugins
+    - proj
+    - affine
+    - attrs
+    - certifi
+    - click >=4.0,!=8.2.*
+    - numpy >=2
+    - pyparsing >=3.0
+
+tests:
+  - python:
+      imports:
+        - rasterio
+      pip_check: true
+  - files:
+      recipe:
+        - test_data
+    script:
+      - rio --help
+      - rio info test_data/test.tif
+  - files:
+      recipe:
+        - run_test.py
+      source:
+       - tests/
+    requirements:
+      run:
+        - pytest
+        - pytest-cov >=2.2.0
+        - aiohttp
+        - boto3 >=1.2.4
+        - fsspec >=2025.9.0
+        - s3fs >=2025.9.0
+        - hypothesis
+        - libgdal-netcdf
+        - matplotlib-base
+        - packaging
+        - requests
+        - shapely
+        - ca-certificates
+        - pytest-randomly ==3.10.1
+    script:
+      - python -m pytest -v -m "not wheel" -rxXs tests/
+
+about:
+  summary: Fast and direct raster I/O for use with NumPy
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/rasterio/
+  documentation: https://rasterio.readthedocs.io/
+
+extra:
+  recipe-maintainers:
+    - weiji14
+    - ocefpaf
+    - ceholden
+    - snowman2
+    - akrherz
