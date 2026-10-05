@@ -70,10 +70,8 @@ tests:
        - tests/
     requirements:
       run:
-        # awaiting upstream pytest=8 support
-        - pytest >=2.8.2,<8
+        - pytest
         - pytest-cov >=2.2.0
-        - ipython >=2.0
         - aiohttp
         - boto3 >=1.2.4
         - fsspec >=2025.9.0
@@ -85,6 +83,7 @@ tests:
         - requests
         - shapely
         - ca-certificates
+        - pytest-randomly ==3.10.1
     script:
       - python -m pytest -v -m "not wheel" -rxXs tests/
 
