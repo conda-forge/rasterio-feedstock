@@ -8,8 +8,8 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_python3.12.____cpython:
-        CONFIG: win_64_python3.12.____cpython
+      win_64_channel_sourcesconda-forgeconda-forgelabelpython_rcpython3.15.____cp315:
+        CONFIG: win_64_channel_sourcesconda-forgeconda-forgelabelpython_rcpython3.15.____cp315
         UPLOAD_PACKAGES: 'True'
         build_platform: win-64
         build_workspace_dir: D:\\bld\\
@@ -18,9 +18,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: D:\Miniforge
-        CONFIG_SHORT: win_64_python3.12.____cpython
-      win_64_python3.13.____cp313:
-        CONFIG: win_64_python3.13.____cp313
+        CONFIG_SHORT: win_64_channel_sourcesconda-forgeconda-f_hec7db75e
+      win_64_channel_sourcesconda-forgepython3.12.____cpython:
+        CONFIG: win_64_channel_sourcesconda-forgepython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         build_platform: win-64
         build_workspace_dir: D:\\bld\\
@@ -29,9 +29,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: D:\Miniforge
-        CONFIG_SHORT: win_64_python3.13.____cp313
-      win_64_python3.14.____cp314:
-        CONFIG: win_64_python3.14.____cp314
+        CONFIG_SHORT: win_64_channel_sourcesconda-forgepython3_h87b221f0
+      win_64_channel_sourcesconda-forgepython3.13.____cp313:
+        CONFIG: win_64_channel_sourcesconda-forgepython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         build_platform: win-64
         build_workspace_dir: D:\\bld\\
@@ -40,9 +40,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: D:\Miniforge
-        CONFIG_SHORT: win_64_python3.14.____cp314
-      win_64_python3.14.____cp314t:
-        CONFIG: win_64_python3.14.____cp314t
+        CONFIG_SHORT: win_64_channel_sourcesconda-forgepython3_hcde7023c
+      win_64_channel_sourcesconda-forgepython3.14.____cp314:
+        CONFIG: win_64_channel_sourcesconda-forgepython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         build_platform: win-64
         build_workspace_dir: D:\\bld\\
@@ -51,7 +51,18 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: D:\Miniforge
-        CONFIG_SHORT: win_64_python3.14.____cp314t
+        CONFIG_SHORT: win_64_channel_sourcesconda-forgepython3_h6690d29e
+      win_64_channel_sourcesconda-forgepython3.14.____cp314t:
+        CONFIG: win_64_channel_sourcesconda-forgepython3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+        build_platform: win-64
+        build_workspace_dir: D:\\bld\\
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: true
+        tools_install_dir: D:\Miniforge
+        CONFIG_SHORT: win_64_channel_sourcesconda-forgepython3_h3ba2b053
   timeoutInMinutes: 360
   variables:
     UPLOAD_TEMP: D:\\tmp

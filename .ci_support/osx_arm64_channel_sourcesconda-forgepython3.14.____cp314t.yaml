@@ -21,7 +21,7 @@ cxx_compiler_version:
 libgdal_core:
 - '3.13'
 macos_machine:
-- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -29,9 +29,11 @@ pin_run_as_build:
 proj:
 - '9.8'
 python:
-- 3.13.* *_cp313
+- 3.14.* *_cp314t
 target_platform:
-- osx-64
+- osx-arm64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+- - python
+  - channel_sources
