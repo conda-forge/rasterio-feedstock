@@ -8,8 +8,8 @@ jobs:
     vmImage: $(VMIMAGE)
   strategy:
     matrix:
-      osx_64_python3.12.____cpython:
-        CONFIG: osx_64_python3.12.____cpython
+      osx_64_channel_sourcesconda-forgeconda-forgelabelpython_rcpython3.15.____cp315:
+        CONFIG: osx_64_channel_sourcesconda-forgeconda-forgelabelpython_rcpython3.15.____cp315
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -18,9 +18,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_64_python3.12.____cpython
-      osx_64_python3.13.____cp313:
-        CONFIG: osx_64_python3.13.____cp313
+        CONFIG_SHORT: osx_64_channel_sourcesconda-forgeconda-f_hd750be0e
+      osx_64_channel_sourcesconda-forgepython3.12.____cpython:
+        CONFIG: osx_64_channel_sourcesconda-forgepython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -29,9 +29,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_64_python3.13.____cp313
-      osx_64_python3.14.____cp314:
-        CONFIG: osx_64_python3.14.____cp314
+        CONFIG_SHORT: osx_64_channel_sourcesconda-forgepython3_h0def7ba4
+      osx_64_channel_sourcesconda-forgepython3.13.____cp313:
+        CONFIG: osx_64_channel_sourcesconda-forgepython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -40,9 +40,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_64_python3.14.____cp314
-      osx_64_python3.14.____cp314t:
-        CONFIG: osx_64_python3.14.____cp314t
+        CONFIG_SHORT: osx_64_channel_sourcesconda-forgepython3_ha73a9a5d
+      osx_64_channel_sourcesconda-forgepython3.14.____cp314:
+        CONFIG: osx_64_channel_sourcesconda-forgepython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -51,9 +51,20 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_64_python3.14.____cp314t
-      osx_arm64_python3.12.____cpython:
-        CONFIG: osx_arm64_python3.12.____cpython
+        CONFIG_SHORT: osx_64_channel_sourcesconda-forgepython3_he4d463ea
+      osx_64_channel_sourcesconda-forgepython3.14.____cp314t:
+        CONFIG: osx_64_channel_sourcesconda-forgepython3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15
+        build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: true
+        tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_64_channel_sourcesconda-forgepython3_ha1e087d0
+      osx_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rcpython3.15.____cp315:
+        CONFIG: osx_arm64_channel_sourcesconda-forgeconda-forgelabelpython_rcpython3.15.____cp315
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -62,9 +73,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_arm64_python3.12.____cpython
-      osx_arm64_python3.13.____cp313:
-        CONFIG: osx_arm64_python3.13.____cp313
+        CONFIG_SHORT: osx_arm64_channel_sourcesconda-forgecond_hfbadc9bc
+      osx_arm64_channel_sourcesconda-forgepython3.12.____cpython:
+        CONFIG: osx_arm64_channel_sourcesconda-forgepython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -73,9 +84,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_arm64_python3.13.____cp313
-      osx_arm64_python3.14.____cp314:
-        CONFIG: osx_arm64_python3.14.____cp314
+        CONFIG_SHORT: osx_arm64_channel_sourcesconda-forgepyth_h68f42e23
+      osx_arm64_channel_sourcesconda-forgepython3.13.____cp313:
+        CONFIG: osx_arm64_channel_sourcesconda-forgepython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -84,9 +95,9 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_arm64_python3.14.____cp314
-      osx_arm64_python3.14.____cp314t:
-        CONFIG: osx_arm64_python3.14.____cp314t
+        CONFIG_SHORT: osx_arm64_channel_sourcesconda-forgepyth_hf1fb912a
+      osx_arm64_channel_sourcesconda-forgepython3.14.____cp314:
+        CONFIG: osx_arm64_channel_sourcesconda-forgepython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         VMIMAGE: macOS-15-arm64
         build_workspace_dir: ~/miniforge3/conda-bld
@@ -95,7 +106,18 @@ jobs:
         resize_partitions: false
         store_build_artifacts: true
         tools_install_dir: ~/miniforge3
-        CONFIG_SHORT: osx_arm64_python3.14.____cp314t
+        CONFIG_SHORT: osx_arm64_channel_sourcesconda-forgepyth_hc27da6df
+      osx_arm64_channel_sourcesconda-forgepython3.14.____cp314t:
+        CONFIG: osx_arm64_channel_sourcesconda-forgepython3.14.____cp314t
+        UPLOAD_PACKAGES: 'True'
+        VMIMAGE: macOS-15-arm64
+        build_workspace_dir: ~/miniforge3/conda-bld
+        free_disk_space: skip
+        pagefile_size: 0
+        resize_partitions: false
+        store_build_artifacts: true
+        tools_install_dir: ~/miniforge3
+        CONFIG_SHORT: osx_arm64_channel_sourcesconda-forgepyth_h4708ac15
   timeoutInMinutes: 360
   variables: {}
 
